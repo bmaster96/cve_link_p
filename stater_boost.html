@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-
+scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="../../docs-
+assets/ico/favicon.png">
+<title>Starter Template for Bootstrap</title>
+<!-- Bootstrap core CSS -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="starter-template.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements
+and media queries -->
+<!--[if lt IE 9]>
+<script src="../../assets/js/html5shiv.js"></script>
+<script src="../../assets/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-fixed-top"
+role="navigation">
+<div class="container nav-container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-
+toggle="collapse" data-target=".navbar-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#">CVE Links Project</a>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li class="active"><a href="#">Principale</a></li>
+<li><a href="#about">infos</a></li>
+</ul>
+<!-- Recherche -->
+<form class="navbar-form">
+    <input type="text" style="width:150px" class="input-sm form-control"
+    placeholder="Recherche">
+    <button type="submit" class="btn btn-primary btn-sm"><span
+    class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+</form>
+</div><!--/.nav-collapse -->
+</div>
+</nav>
+<div class="container">
+<div class="starter-template">
+    </div>
+    </div><!-- /.container -->
+
+    <div class="container">
+        <div class="row equipe-btn">
+            <div class="col-lg-11 col-lg-offset-1">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <form class="form-inline">
+                        <input type="text" style="width:150px" class="input-sm form-control"
+                        placeholder="Recherche">
+                        <button type="submit" class="btn btn-primary btn-sm"><span
+                        class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+                    </form>
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-1">
+                    <div class="ajout form-inline">
+                        <button class="btn btn-success" type="submit"><span class="glyphicon
+                            glyphicon-plus"></span> Groupe </button>
+                         <button class="btn btn-success" type="submit"><span class="glyphicon
+                        glyphicon-plus"></span> Sous-Groupe</button>
+                        <button class="btn btn-success" type="submit"><span class="glyphicon
+                            glyphicon-plus"></span> Liens </button>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-lg-2 col-lg-offset-1" id="logo">logo</div>
+                </div> --> 
+                <img class="col-lg-3 img-rounded logo col-lg-offset-1" src="images/1.jpg" alt="logo">
+            <!-- </div> -->
+            <div id="monaccordeon" class="col-lg-7 pull-right panel-group">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <a class="accordion-toggle" href="#item1" data-
+                            parent="#monaccordeon" data-toggle="collapse">
+                        Groupe 1</a>
+                        </h3>
+                    </div>
+                <div id="item1" class="panel-collapse collapse in">
+                    <div class="panel-body"> 
+                        
+                        <ul class="list-group col-lg-7 col-lg-offset-2">
+                            <li class="list-group-item"><span class="glyphicon
+                                glyphicon-link text-primary"></span>
+                                <a href="#"> Link1</a></li>
+                                <li class="list-group-item"><span class="glyphicon
+                                    glyphicon-link text-primary"></span>
+                                    <a href="#"> link2</a></li>                                        
+                        </ul>
+                    </div>
+                </div>
+                </div>
+                <div class="panel panel-info">
+                    <!-- <div class="row"> -->
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                            <a id="g1_link" class="accordion-toggle" href="#item2" data-
+                            parent="#monaccordeon" data-toggle="collapse">
+                            Groupe 2
+                            </a>
+                        </h3>
+                    </div>
+                    <div id="item2" class="panel-collapse collapse">
+                    <div class="panel-body"> 
+                            <div class="row">
+                                <div id="monaccordeon2" class="col-lg-8 col-lg-offset-2 panel-group">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle" href="#item3" data-
+                                                parent="#monaccordeon2" data-toggle="collapse">
+                                            Sous Groupe 1</a>
+                                            </h3>
+                                        </div>
+                                        <div id="item3" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item"><span class="glyphicon
+                                                        glyphicon-link text-primary"></span>
+                                                        <a href="#"> Link1</a></li>
+                                                        <li class="list-group-item"><span class="glyphicon
+                                                            glyphicon-link text-primary"></span>
+                                                            <a href="#"> link2</a></li>                                        
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle" href="#item4" data-
+                                                parent="#monaccordeon2" data-toggle="collapse">
+                                            Sous Groupe 2</a>
+                                            </h3>
+                                        </div>
+                                        <div id="item4" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item"><span class="glyphicon
+                                                            glyphicon-link text-primary"></span>
+                                                            <a href="#"> Link1</a></li>
+                                                            <li class="list-group-item"><span class="glyphicon
+                                                                glyphicon-link text-primary"></span>
+                                                                <a href="#"> link2</a></li>                                        
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                        <!-- groupe 2
+                    </div>                     -->
+                    
+    </div>
+
+   
+              
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster
+    -->
+    <script src="./jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(function (){
+        $('#g1_link').click(function () {
+        $('#item3,#item4').collapse('hide');
+        })
+        // $('#menu').on('hidden.bs.collapse', function () {
+        // $('#icone').removeClass('glyphicon-folder-
+        // open').addClass('glyphicon-folder-close');
+        // })
+        });
+        </script>
+</body>
+ </html>

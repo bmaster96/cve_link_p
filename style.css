@@ -1,0 +1,6052 @@
+body {
+    font-family: "system-ui", sans-serif;
+    font-size: 14px;
+    background-color: rgb(247, 247, 247);
+    margin: 0;
+}
+
+@media (forced-colors:none) {
+    input::selection {
+        color: #FFF;
+        background: #0078D4;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(51, 51, 51);
+    }
+}
+
+@media (forced-colors:none) and (prefers-color-scheme: dark) {
+    input::selection {
+        color: #000;
+        /* RGBA because Blink applies an opacity otherwise */
+        background: rgba(147, 184, 231, 0.996);
+        opacity: 1;
+    }
+}
+
+#app-root {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+#modal-root {
+    position: fixed;
+}
+
+#context-menu-root {
+    position: fixed;
+}
+
+#dialog-root {
+    position: fixed;
+}
+
+</style><style data-jss="" data-meta="BaseTypography">.c01355 {
+    margin-top: 0;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 0;
+    color: #2B2B2B;
+}
+
+.c01356 {
+    font-size: 60px;
+    line-height: 72px;
+}
+
+.c01357 {
+    font-size: 46px;
+    line-height: 56px;
+}
+
+.c01358 {
+    font-size: 34px;
+    line-height: 44px;
+}
+
+.c01359 {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.c01360 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.c01361 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.c01362 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c01363 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.c01364 {
+    font-size: 10px;
+    line-height: 16px;
+}
+
+</style><style data-jss="" data-meta="MSFTHeading">.c01347 {}
+
+.c01347.c01348, .c01347.c01349, .c01347.c01350, .c01347.c01351, .c01347.c01352, .c01347.c01353, .c01347.c01354 {
+    cursor: default;
+    font-weight: 600;
+}
+
+.c01348 {}
+
+.c01349 {}
+
+.c01350 {}
+
+.c01351 {}
+
+.c01352 {}
+
+.c01353 {}
+
+.c01354 {}
+
+</style><style data-jss="" data-meta="MSFTButtonBase">.c01341 {
+    position: relative;
+}
+
+.c01341::before {
+    width: 100%;
+    bottom: -3px;
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1px;
+    left: 0;
+}
+
+.c01341 svg {
+    width: 16px;
+    height: 16px;
+}
+
+.c01342 {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01342 {
+        color: GrayText;
+        opacity: 1;
+    }
+}
+
+.c01343 {
+    width: 16px;
+    height: 16px;
+}
+
+.c01344 {
+    width: 16px;
+    height: 16px;
+}
+
+.c01345 {}
+
+.c01345 .c01343 {
+    margin-right: 12px;
+}
+
+.c01345 .c01344 {
+    margin-left: 12px;
+}
+
+.c01346 {
+    cursor: pointer;
+    display: inline-flex;
+    overflow: hidden;
+    max-width: 374px;
+    box-sizing: border-box;
+    transition: all 0.1s ease-in-out;
+    line-height: 1;
+    font-family: inherit;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    min-width: 32px;
+    padding: 0 10px;
+    height: 32px;
+    color: #2B2B2B;
+    fill: #2B2B2B;
+    background: #FFFFFF;
+}
+
+.c01346::-moz-focus-inner {
+    border: 0;
+}
+
+.c01346:hover:enabled, a.c01346:not(.c01342):hover {
+    background-color: #F2F2F2;
+}
+
+.c01346:active:enabled, a.c01346:not(.c01342):active {
+    background-color: #F7F7F7;
+}
+
+.c01346:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01346:focus, .js-focus-visible .c01346.focus-visible, .js-focus-visible [data-focus-visible-added].c01346 {
+    border-color: #888888;
+}
+
+.c01346:disabled {}
+
+@media (-ms-high-contrast:active) {
+    .c01346 {
+        fill: ButtonText;
+        color: ButtonText;
+        border: none;
+        background: ButtonFace;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+a.c01346:not(.c01342) {}
+
+@media (-ms-high-contrast:active) {
+    a.c01346:not(.c01342) {
+        fill: LinkText !important;
+        color: LinkText !important;
+        background: Window;
+        border-color: LinkText !important;
+    }
+}
+
+a.c01346:not(.c01342):not(.c01342):hover {}
+
+a.c01346:not(.c01342).c01342 {}
+
+@media (-ms-high-contrast:active) {
+    a.c01346:not(.c01342).c01342 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    a.c01346:not(.c01342):not(.c01342):hover {
+        background: ButtonFace;
+        box-shadow: 0 0 0 1px inset LinkText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01346:disabled {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01346:focus, .js-focus-visible .c01346.focus-visible, .js-focus-visible [data-focus-visible-added].c01346 {
+        border-color: ButtonText;
+        box-shadow: 0 0 0 1px inset ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01346:hover:enabled, a.c01346:not(.c01342):hover {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+</style><style data-jss="" data-meta="BaseDialog">.c01337 {
+    display: none;
+}
+
+.c01337[aria-hidden="false"] {
+    display: block;
+}
+
+.c01338 {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    overflow: auto;
+    justify-content: center;
+}
+
+.c01339 {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.c01340 {
+    z-index: 1;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 25.6px 57.6px rgba(0, 0, 0, 0.13), 0px 0px 16.4px rgba(0, 0, 0, 0.11);
+}
+
+@media (-ms-high-contrast:active) {
+    .c01340 {
+        border: 1px solid WindowText;
+    }
+}
+
+</style><style data-jss="" data-meta="Ui">.c01306 {
+    margin-inline-end: 4px;
+    font-weight: 600;
+}
+
+.c01307 {
+    height: unset;
+    border: none;
+    cursor: pointer;
+    display: inline;
+    padding: 0;
+    min-width: unset;
+    background: none;
+    transition: none;
+    border-radius: 0px;
+    margin-inline-start: 4px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #0078D4;
+    fill: #0078D4;
+}
+
+.c01307:disabled {
+    cursor: default !important;
+    opacity: unset;
+    color: #767676;
+    fill: #767676;
+}
+
+.c01307:hover:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #0060A9;
+    color: #0066B4;
+    fill: #0066B4;
+}
+
+.c01307:focus:enabled {
+    outline: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px #838383;
+}
+
+.c01307:active:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #097DD5;
+    color: #1181D7;
+    fill: #1181D7;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01307 {
+        fill: LinkText;
+        color: LinkText;
+        forced-color-adjust: none;
+    }
+    .c01307:hover:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c01307:focus:enabled {
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c01307:active:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+}
+
+.c01308 {
+    display: flex;
+}
+
+.c01308> :first-child {
+    margin-inline-end: 8px;
+}
+
+.c01309 {
+    flex: 1;
+    height: 32px;
+    max-width: calc(100% / 2 - 4px);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c01310 {
+    overflow: auto;
+    max-height: 100%;
+    border-radius: 4px;
+    box-shadow: 0px 6.4px 14.4px rgba(0, 0, 0, 0.13), 0px 0px 5.6px rgba(0, 0, 0, 0.11);
+}
+
+.c01310:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01310:focus, .js-focus-visible .c01310.focus-visible, .js-focus-visible [data-focus-visible-added].c01310 {}
+
+.c01311 {}
+
+.c01311:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01311:focus, .js-focus-visible .c01311.focus-visible, .js-focus-visible [data-focus-visible-added].c01311 {}
+
+.c01312 {
+    overflow: auto;
+}
+
+.c01313 {
+    height: 100%;
+    margin-bottom: 24px;
+    margin-inline-end: 24px;
+}
+
+.c01314 {
+    padding-top: 21px;
+}
+
+.c01315 {
+    height: 100%;
+    display: flex;
+    max-height: 560px;
+    flex-direction: column;
+    padding-inline-start: 24px;
+}
+
+.c01316 {
+    display: flex;
+    padding-top: 6px;
+    justify-content: space-between;
+}
+
+.c01317 {
+    display: flex;
+    padding-top: 6px;
+    justify-content: flex-end;
+}
+
+.c01318 {
+    position: relative;
+}
+
+.c01319 {
+    display: flex;
+    margin-bottom: 18px;
+    padding-inline-end: 24px;
+    padding-inline-start: 24px;
+    color: #2B2B2B;
+}
+
+.c01320 {
+    margin-inline-end: 20px;
+}
+
+.c01321 {
+    margin-top: 0px;
+    margin-bottom: 18px;
+    color: #2B2B2B;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c01322 {
+    z-index: 9;
+    margin-bottom: 18px;
+}
+
+.c01323 {
+    margin-bottom: 0px;
+}
+
+.c01323 [aria-haspopup="true"] {
+    border-color: #CC0000;
+}
+
+.c01323 [aria-haspopup="true"]:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01323 [aria-haspopup="true"]:focus, .js-focus-visible .c01323 [aria-haspopup="true"].focus-visible, .js-focus-visible [data-focus-visible-added].c01323 [aria-haspopup="true"] {
+    box-shadow: #CC0000 0px 0px 0px 1px inset;
+    border-color: #CC0000;
+}
+
+.c01323 [aria-haspopup="true"]:hover:enabled {
+    border-color: #CC0000;
+}
+
+.c01323 [aria-haspopup="true"]:active:enabled {
+    border-color: #CC0000;
+}
+
+.c01324 {
+    resize: vertical;
+    min-height: 32px;
+    margin-bottom: 18px;
+}
+
+.c01325 {
+    width: 100%;
+    height: 32px;
+    transition: all 0.2s ease-in-out 0s, margin 0s;
+    margin-top: 0px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c01326 {
+    caret-color: #CC0000;
+    border-color: #CC0000;
+    margin-bottom: 0px;
+}
+
+.c01326:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01326:focus, .js-focus-visible .c01326.focus-visible, .js-focus-visible [data-focus-visible-added].c01326 {
+    box-shadow: #CC0000 0px 0px 0px 1px inset;
+    border-color: #CC0000;
+}
+
+.c01326:hover:enabled {
+    border-color: #CC0000;
+}
+
+.c01326:active:enabled {
+    border-color: #CC0000;
+}
+
+.c01327 {
+    color: #CC0000;
+    height: 18px;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.c01328 {
+    margin-bottom: 10px;
+    color: #2B2B2B;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.c01329 {
+    color: #CC0000;
+}
+
+.c01330 {
+    width: 14px;
+    height: 14px;
+}
+
+.c01331 {
+    top: -22px;
+    width: 28px;
+    height: 28px;
+    margin: 6px;
+    padding: 0;
+    position: absolute;
+    min-width: 28px;
+    max-width: unset;
+    transition: none;
+    background: transparent;
+    right: 0;
+    left: unset;
+}
+
+.c01331:hover:not([disabled]) {}
+
+.c01331>* {
+    display: flex !important;
+}
+
+.c01331:disabled {}
+
+@media (-ms-high-contrast:active) {
+    .c01331 {
+        fill: ButtonText;
+        forced-color-adjust: none;
+    }
+}
+
+.c01331 .c01330 {
+    width: 12px;
+    height: 12px;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01331:disabled {
+        fill: GrayText;
+        forced-color-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01331:hover:not([disabled]) {
+        fill: HighlightText !important;
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+.c01332 {
+    display: flex;
+    flex-direction: row;
+}
+
+.c01333 {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.c01333:not(:first-child) {
+    margin-inline-start: 8px;
+}
+
+</style><style data-jss="" data-meta="z - jssStyleSheet">.c01334 {
+    margin: 0px;
+}
+
+.c01335 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.c01336 {
+    padding: 0px;
+}
+
+</style><style data-jss="" data-meta="MSFTButton">.c01296 {
+    cursor: pointer;
+    display: inline-flex;
+    overflow: hidden;
+    max-width: 374px;
+    box-sizing: border-box;
+    transition: all 0.1s ease-in-out;
+    line-height: 1;
+    font-family: inherit;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    min-width: 32px;
+    padding: 0 10px;
+    height: 32px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    color: #2B2B2B;
+    fill: #2B2B2B;
+    background: #EDEDED;
+}
+
+.c01296:hover:enabled, a.c01296:not(.c01303):hover {
+    background: #E5E5E5;
+}
+
+.c01296:active:enabled, a.c01296:not(.c01303):active {
+    background: #F2F2F2;
+}
+
+.c01296:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01296:focus, .js-focus-visible .c01296.focus-visible, .js-focus-visible [data-focus-visible-added].c01296 {
+    border-color: #888888;
+}
+
+.c01296:disabled {}
+
+.c01296::-moz-focus-inner {
+    border: 0;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01296 {
+        fill: ButtonText;
+        color: ButtonText;
+        background: ButtonFace;
+        border-color: ButtonText;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+a.c01296:not(.c01303) {}
+
+@media (-ms-high-contrast:active) {
+    a.c01296:not(.c01303) {
+        fill: LinkText !important;
+        color: LinkText !important;
+        background: Window;
+        border-color: LinkText !important;
+    }
+}
+
+a.c01296:not(.c01303):not(.c01303):hover {}
+
+a.c01296:not(.c01303).c01303 {}
+
+@media (-ms-high-contrast:active) {
+    a.c01296:not(.c01303).c01303 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+a.c01296:not(.c01303).c01303:hover {}
+
+@media (-ms-high-contrast:active) {
+    a.c01296:not(.c01303).c01303:hover {
+        box-shadow: none !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    a.c01296:not(.c01303):not(.c01303):hover {
+        background: ButtonFace;
+        box-shadow: 0 0 0 1px inset LinkText !important;
+    }
+}
+
+a.c01296:not(.c01303):not(.c01303):hover .c01304, a.c01296:not(.c01303):not(.c01303):hover .c01305 {}
+
+@media (-ms-high-contrast:active) {
+    a.c01296:not(.c01303):not(.c01303):hover .c01304, a.c01296:not(.c01303):not(.c01303):hover .c01305 {
+        fill: LinkText !important;
+        color: LinkText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01296:disabled {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01296:focus, .js-focus-visible .c01296.focus-visible, .js-focus-visible [data-focus-visible-added].c01296 {
+        border-color: ButtonText;
+        box-shadow: 0 0 0 1px inset ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01296:hover:enabled, a.c01296:not(.c01303):hover {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+.c01296:hover:enabled .c01304, .c01296:hover:enabled .c01305, a.c01296:not(.c01303):hover .c01304, a.c01296:not(.c01303):hover .c01305 {}
+
+@media (-ms-high-contrast:active) {
+    .c01296:hover:enabled .c01304, .c01296:hover:enabled .c01305, a.c01296:not(.c01303):hover .c01304, a.c01296:not(.c01303):hover .c01305 {
+        fill: HighlightText !important;
+        color: HighlightText !important;
+    }
+}
+
+.c01297 {
+    color: #FFFFFF;
+    fill: #FFFFFF;
+    background: #0078D4;
+}
+
+.c01297:hover:enabled, a.c01297:not(.c01303):hover {
+    background: #006CBE;
+}
+
+.c01297:active:enabled, a.c01297:not(.c01303):active {
+    background: #1683D8;
+}
+
+.c01297:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01297:focus, .js-focus-visible .c01297.focus-visible, .js-focus-visible [data-focus-visible-added].c01297 {
+    border-color: #888888;
+    box-shadow: 0 0 0 2px inset #FFFFFF;
+}
+
+.c01297 .c01304, .c01297 .c01305 {
+    fill: #FFFFFF;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01297 {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+        border-color: Highlight;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+a.c01297:not(.c01303) {}
+
+a.c01297:not(.c01303) .c01304, a.c01297:not(.c01303) .c01305 {}
+
+@media (-ms-high-contrast:active) {
+    a.c01297:not(.c01303) .c01304, a.c01297:not(.c01303) .c01305 {
+        fill: LinkText !important;
+        color: LinkText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01297:focus, .js-focus-visible .c01297.focus-visible, .js-focus-visible [data-focus-visible-added].c01297 {
+        border-color: ButtonText !important;
+        box-shadow: 0 0 0 2px inset ButtonFace;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01297:hover:enabled, a.c01297:not(.c01303):hover {
+        fill: Highlight;
+        color: Highlight;
+        background: HighlightText;
+        border-color: Highlight;
+    }
+}
+
+.c01298 {
+    background: transparent;
+    border: 1px solid #BEBEBE;
+    padding: 0 11px;
+}
+
+.c01298:hover:enabled, a.c01298:not(.c01303):hover {
+    background: transparent;
+    border: 1px solid #979797;
+}
+
+.c01298:active:enabled, a.c01298:not(.c01303):active {
+    background: transparent;
+    border: 1px solid #D6D6D6;
+}
+
+.c01298:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01298:focus, .js-focus-visible .c01298.focus-visible, .js-focus-visible [data-focus-visible-added].c01298 {
+    box-shadow: 0 0 0 1px #888888 inset;
+    border-color: #888888;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01298 {
+        fill: ButtonText;
+        color: ButtonText;
+        background: ButtonFace;
+        border-color: ButtonText;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01298:focus, .js-focus-visible .c01298.focus-visible, .js-focus-visible [data-focus-visible-added].c01298 {
+        border-color: ButtonText;
+        box-shadow: 0 0 0 1px inset ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01298:hover:enabled, a.c01298:not(.c01303):hover {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+.c01299 {
+    background-color: transparent;
+    color: #0078D4;
+    fill: #0078D4;
+}
+
+.c01299:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01299:focus, .js-focus-visible .c01299.focus-visible, .js-focus-visible [data-focus-visible-added].c01299 {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.c01299 .c01302::before {}
+
+.c01299:hover .c01302::before {
+    background: #0066B4;
+}
+
+.c01299:hover.c01303 .c01302::before {
+    display: none;
+}
+
+.c01299:active .c01302::before {
+    background: #1181D7;
+}
+
+.c01299.c01303, .c01299.c01303 .c01302::before {
+    background-color: transparent;
+}
+
+.c01299:hover:enabled, a.c01299:not(.c01303):hover {
+    background-color: transparent;
+    color: #0066B4;
+}
+
+.c01299:active:enabled, a.c01299:not(.c01303):active {
+    background-color: transparent;
+    color: #1181D7;
+    fill: #1181D7;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01299 {
+        fill: ButtonText;
+        color: ButtonText;
+        border: none;
+        background: ButtonFace;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+a.c01299:not(.c01303) {}
+
+a.c01299:not(.c01303):not(.c01303):hover {}
+
+a.c01299:not(.c01303).c01303 {}
+
+a.c01299:not(.c01303) .c01302::before {}
+
+@media (-ms-high-contrast:active) {
+    a.c01299:not(.c01303) .c01302::before {
+        background: transparent;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    a.c01299:not(.c01303).c01303 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    a.c01299:not(.c01303):not(.c01303):hover {
+        fill: LinkText !important;
+        color: LinkText !important;
+        box-shadow: none !important;
+    }
+}
+
+a.c01299:not(.c01303):not(.c01303):hover .c01302::before {}
+
+@media (-ms-high-contrast:active) {
+    a.c01299:not(.c01303):not(.c01303):hover .c01302::before {
+        background: LinkText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01299:hover:enabled, a.c01299:not(.c01303):hover {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+.c01299:hover:enabled .c01304, .c01299:hover:enabled .c01305, a.c01299:not(.c01303):hover .c01304, a.c01299:not(.c01303):hover .c01305 {
+    fill: #0066B4;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01299:hover:enabled .c01304, .c01299:hover:enabled .c01305, a.c01299:not(.c01303):hover .c01304, a.c01299:not(.c01303):hover .c01305 {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01299:hover .c01302::before {
+        background: Highlight;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01299 .c01302::before {
+        background: ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01299:focus, .js-focus-visible .c01299.focus-visible, .js-focus-visible [data-focus-visible-added].c01299 {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+body:not(.js-focus-visible) .c01299:focus .c01302::before, .js-focus-visible .c01299.focus-visible .c01302::before, .js-focus-visible [data-focus-visible-added].c01299 .c01302::before {
+    background: #2B2B2B;
+    height: 2px;
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01299:focus .c01302::before, .js-focus-visible .c01299.focus-visible .c01302::before, .js-focus-visible [data-focus-visible-added].c01299 .c01302::before {
+        background: Highlight;
+    }
+}
+
+.c01300 {
+    min-width: 74px;
+    padding-left: 0;
+    border-width: 0;
+    padding-right: 0;
+    justify-content: flex-start;
+    background-color: transparent;
+    color: #0078D4;
+    fill: #0078D4;
+}
+
+.c01300:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01300:focus, .js-focus-visible .c01300.focus-visible, .js-focus-visible [data-focus-visible-added].c01300 {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.c01300 .c01302::before {}
+
+.c01300:hover .c01302::before {
+    background: #0066B4;
+}
+
+.c01300:hover.c01303 .c01302::before {
+    display: none;
+}
+
+.c01300:active .c01302::before {
+    background: #1181D7;
+}
+
+.c01300.c01303, .c01300.c01303 .c01302::before {
+    background-color: transparent;
+}
+
+.c01300:hover:enabled, a.c01300:not(.c01303):hover {
+    background-color: transparent;
+    color: #0066B4;
+}
+
+.c01300:active:enabled, a.c01300:not(.c01303):active {
+    background-color: transparent;
+    color: #1181D7;
+    fill: #1181D7;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01300 {
+        fill: ButtonText;
+        color: ButtonText;
+        border: none;
+        background: ButtonFace;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+a.c01300:not(.c01303) {}
+
+a.c01300:not(.c01303):not(.c01303):hover {}
+
+a.c01300:not(.c01303).c01303 {}
+
+@media (-ms-high-contrast:active) {
+    a.c01300:not(.c01303).c01303 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    a.c01300:not(.c01303):not(.c01303):hover {
+        fill: LinkText !important;
+        color: LinkText !important;
+        box-shadow: none !important;
+    }
+}
+
+a.c01300:not(.c01303):not(.c01303):hover .c01302::before {}
+
+@media (-ms-high-contrast:active) {
+    a.c01300:not(.c01303):not(.c01303):hover .c01302::before {
+        background: LinkText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01300:hover:enabled, a.c01300:not(.c01303):hover {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+.c01300:hover:enabled .c01304, .c01300:hover:enabled .c01305, a.c01300:not(.c01303):hover .c01304, a.c01300:not(.c01303):hover .c01305 {
+    fill: #0066B4;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01300:hover:enabled .c01304, .c01300:hover:enabled .c01305, a.c01300:not(.c01303):hover .c01304, a.c01300:not(.c01303):hover .c01305 {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01300:hover .c01302::before {
+        background: Highlight;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01300 .c01302::before {
+        background: ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01300:focus, .js-focus-visible .c01300.focus-visible, .js-focus-visible [data-focus-visible-added].c01300 {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+body:not(.js-focus-visible) .c01300:focus .c01302::before, .js-focus-visible .c01300.focus-visible .c01302::before, .js-focus-visible [data-focus-visible-added].c01300 .c01302::before {
+    background: #2B2B2B;
+    height: 2px;
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01300:focus .c01302::before, .js-focus-visible .c01300.focus-visible .c01302::before, .js-focus-visible [data-focus-visible-added].c01300 .c01302::before {
+        background: Highlight;
+    }
+}
+
+.c01301 {
+    background: #FFFFFF;
+}
+
+.c01301:hover:enabled, a.c01301:not(.c01303):hover {
+    background-color: #F2F2F2;
+}
+
+.c01301:active:enabled, a.c01301:not(.c01303):active {
+    background-color: #F7F7F7;
+}
+
+.c01301:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01301:focus, .js-focus-visible .c01301.focus-visible, .js-focus-visible [data-focus-visible-added].c01301 {
+    border-color: #888888;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01301 {
+        fill: ButtonText;
+        color: ButtonText;
+        border: none;
+        background: ButtonFace;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01301:focus, .js-focus-visible .c01301.focus-visible, .js-focus-visible [data-focus-visible-added].c01301 {
+        border-color: ButtonText;
+        box-shadow: 0 0 0 1px inset ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01301:hover:enabled, a.c01301:not(.c01303):hover {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+.c01302 {
+    position: relative;
+}
+
+.c01302::before {
+    width: 100%;
+    bottom: -3px;
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1px;
+    left: 0;
+}
+
+.c01302 svg {
+    width: 16px;
+    height: 16px;
+}
+
+.c01303 {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01303 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+.c01303 .c01304, .c01303 .c01305 {}
+
+@media (-ms-high-contrast:active) {
+    .c01303 .c01304, .c01303 .c01305 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+    }
+}
+
+.c01304 {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+}
+
+.c01305 {
+    width: 16px;
+    height: 16px;
+    margin-left: 12px;
+}
+
+</style><style data-jss="" data-meta="BaseLabel">.c01294 {
+    display: inline-block;
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2B2B2B;
+}
+
+.c01295 {
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+}
+
+</style><style data-jss="" data-meta="BaseCheckbox">.c01287 {
+    display: inline-flex;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    align-items: center;
+    flex-direction: row;
+}
+
+.c01287 .c01290 {
+    padding-left: 10px;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01287 {
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+.c01288 {
+    margin: 0;
+    z-index: 1;
+    position: absolute;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background: #FFFFFF;
+    border: 1px solid #BEBEBE;
+}
+
+.c01288:enabled {
+    cursor: pointer;
+}
+
+.c01288:hover:enabled {
+    background: #FFFFFF;
+    border-color: #979797;
+}
+
+.c01288:active:enabled {
+    background: #FFFFFF;
+    border-color: #D6D6D6;
+}
+
+.c01288:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01288:focus, .js-focus-visible .c01288.focus-visible, .js-focus-visible [data-focus-visible-added].c01288 {
+    box-shadow: 0 0 0 1px #888888 inset;
+    border-color: #888888;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01288 {
+        background: Window;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01288:focus, .js-focus-visible .c01288.focus-visible, .js-focus-visible [data-focus-visible-added].c01288 {
+        box-shadow: 0 0 0 1px ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01288:hover:enabled {
+        background: Window;
+        border-color: Highlight;
+    }
+}
+
+.c01289 {
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+.c01289::before {
+    top: 0;
+    left: 0;
+    content: '';
+    z-index: 1;
+    position: absolute;
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+}
+
+.c01290 {
+    cursor: pointer;
+    color: #2B2B2B;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01290 {
+        fill: WindowText !important;
+        color: WindowText !important;
+    }
+}
+
+.c01291 {}
+
+.c01291 .c01289 {}
+
+.c01291:hover {}
+
+.c01291 .c01288 {}
+
+@media (-ms-high-contrast:active) {
+    .c01291 .c01288 {
+        background: Highlight;
+    }
+}
+
+.c01291 .c01288:hover {}
+
+@media (-ms-high-contrast:active) {
+    .c01291 .c01288:hover {
+        background: HighlightText;
+    }
+}
+
+.c01291:hover .c01289 {}
+
+.c01291:hover .c01289::before {}
+
+@media (-ms-high-contrast:active) {
+    .c01291:hover .c01289::before {
+        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill="Highlight" fill-rule="evenodd" clip-rule="evenodd" d="M8.143 12.6697L15.235 4.5L16.8 5.90363L8.23812 15.7667L3.80005 11.2556L5.27591 9.7555L8.143 12.6697Z"/></svg>');
+    }
+}
+
+.c01291 .c01289::before {
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill="%232B2B2B" fill-rule="evenodd" clip-rule="evenodd" d="M8.143 12.6697L15.235 4.5L16.8 5.90363L8.23812 15.7667L3.80005 11.2556L5.27591 9.7555L8.143 12.6697Z"/></svg>');
+}
+
+@media (-ms-high-contrast:active) {
+    .c01291 .c01289::before {
+        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill="HighlightText" fill-rule="evenodd" clip-rule="evenodd" d="M8.143 12.6697L15.235 4.5L16.8 5.90363L8.23812 15.7667L3.80005 11.2556L5.27591 9.7555L8.143 12.6697Z"/></svg>');
+    }
+}
+
+.c01292 {}
+
+.c01292 .c01289 {}
+
+.c01292 .c01289::before {
+    width: auto;
+    height: auto;
+    transform: none;
+    border-radius: 2px;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    background: #2B2B2B;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01292 .c01289::before {
+        background-color: Highlight;
+    }
+}
+
+.c01293 {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01293 {
+        color: GrayText;
+        opacity: 1;
+    }
+}
+
+.c01293 .c01288, .c01293 .c01290 {
+    cursor: not-allowed !important;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01293 .c01288, .c01293 .c01290 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+</style><style data-jss="" data-meta="MSFTSelect">.c01274 {
+    max-width: 374px;
+    height: 32px;
+}
+
+.c01275 {
+    width: 100%;
+    cursor: pointer;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    font-family: inherit;
+    height: 32px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    background: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    color: #2B2B2B;
+    padding: 0 11px;
+    border-radius: 2px;
+}
+
+.c01275:hover:enabled {
+    background: #FFFFFF;
+    border-color: #979797;
+}
+
+.c01275:active:enabled {
+    background: #FFFFFF;
+    border-color: #D6D6D6;
+}
+
+.c01275:focus:enabled {
+    outline: none;
+    box-shadow: 0 0 0 1px #888888 inset;
+    border-color: #888888;
+}
+
+.c01275:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+.c01275::placeholder {
+    color: #767676;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01275 {
+        fill: ButtonText;
+        color: ButtonText;
+        background: ButtonFace;
+        border-color: ButtonText;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+.c01275:disabled>span>svg {}
+
+@media (-ms-high-contrast:active) {
+    .c01275:disabled>span>svg {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01275::placeholder {
+        color: GrayText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01275:disabled {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01275:focus:enabled {
+        border-color: ButtonText;
+        box-shadow: 0 0 0 1px inset ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01275:hover:enabled {
+        background: ButtonFace;
+        border: 1px solid Highlight;
+    }
+}
+
+.c01276 {
+    display: grid;
+    align-items: center;
+    justify-items: start;
+    grid-template-columns: 1fr auto;
+}
+
+.c01277 {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.c01278 {
+    grid-column-start: 2;
+    margin: 0 0 0 12px;
+    fill: #2B2B2B;
+    width: 16px;
+    height: 16px;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01278 {
+        fill: ButtonText !important;
+        color: ButtonText !important;
+    }
+}
+
+.c01279 {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    overflow: auto;
+    max-height: 328px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 12.8px 28.8px rgba(0, 0, 0, 0.13), 0px 0px 9.2px rgba(0, 0, 0, 0.11);
+    padding: 4px 0;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01279 {
+        background: ButtonFace;
+        -ms-high-contrast-adjust: none;
+        border: 1px solid ButtonText;
+    }
+}
+
+.c01280 {}
+
+.c01280 .c01279 {
+    border: 1px solid;
+    position: static;
+    box-shadow: none;
+    border-color: #BEBEBE;
+}
+
+.c01281 {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.c01282 {
+    grid-template-columns: 1fr auto;
+}
+
+.c01282 .c01279 {
+    grid-column: 2;
+}
+
+.c01283 {
+    grid-template-columns: auto 1fr;
+}
+
+.c01283 .c01279 {
+    grid-column: 1;
+}
+
+.c01284 {
+    grid-template-rows: 1fr auto;
+}
+
+.c01284 .c01279 {
+    grid-row: 2;
+}
+
+.c01285 {
+    grid-template-rows: auto 1fr;
+}
+
+.c01285 .c01279 {
+    grid-row: 1;
+}
+
+</style><style data-jss="" data-meta="MSFTSelect - jssStyleSheet">.c01286 {
+    z-index: 9;
+    background-color: inherit;
+}
+
+</style><style data-jss="" data-meta="MSFTToggle">.c01266 {
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    color: #2B2B2B;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01266 {
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+.c01267 {
+    clear: both;
+    cursor: pointer;
+    display: block;
+    padding-bottom: 7px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c01268 {
+    cursor: pointer;
+    position: relative;
+    margin-top: 0;
+    float: left;
+}
+
+.c01269 {
+    position: absolute;
+    transition: all .1s ease;
+    pointer-events: none;
+    top: 5px;
+    left: 5px;
+    right: unset;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    background: #2B2B2B;
+}
+
+.c01270 {
+    cursor: pointer;
+    margin: 0;
+    display: block;
+    outline: none;
+    position: relative;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    border-radius: 20px;
+}
+
+.c01270:active {
+    background: #FFFFFF;
+    border-color: #D6D6D6;
+}
+
+.c01270:hover {
+    background: #FFFFFF;
+    border-color: #979797;
+}
+
+.c01270:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01270:focus, .js-focus-visible .c01270.focus-visible, .js-focus-visible [data-focus-visible-added].c01270 {
+    box-shadow: 0 0 0 1px #888888 inset;
+    border-color: #888888;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01270 {
+        background: Window;
+        border-color: ButtonText;
+    }
+    .c01270+span {
+        background: ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01270:focus, .js-focus-visible .c01270.focus-visible, .js-focus-visible [data-focus-visible-added].c01270 {
+        box-shadow: 0 0 0 1px ButtonText inset;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01270:hover {
+        background: Window;
+        border-color: Highlight;
+    }
+    .c01270:hover+span {
+        background: Highlight;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01270:active {
+        background: Highlight;
+        border-color: HighlightText;
+    }
+    .c01270:active+span {
+        background: HighlightText;
+    }
+}
+
+.c01271 {}
+
+.c01271 .c01270 {
+    background: #0078D4;
+    border-color: #0078D4;
+}
+
+.c01271 .c01269 {
+    left: 25px;
+    right: unset;
+    background: #FFFFFF;
+}
+
+.c01271 .c01270:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01271 .c01270:focus, .js-focus-visible .c01271 .c01270.focus-visible, .js-focus-visible [data-focus-visible-added].c01271 .c01270 {
+    box-shadow: 0 0 0 1px #888888 inset, 0 0 0 3px #FFFFFF inset;
+    border-color: #888888;
+}
+
+.c01271 .c01270:disabled {}
+
+.c01271 .c01270:hover {}
+
+.c01271 .c01270:active {}
+
+@media (-ms-high-contrast:active) {
+    .c01271 .c01270 {
+        background: Highlight;
+        border-color: Highlight;
+    }
+    .c01271 .c01270+span {
+        background: HighlightText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01271 .c01270:active {
+        background: Highlight !important;
+        border-color: Highlight !important;
+    }
+    .c01271 .c01270:active+span {
+        background: HighlightText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01271 .c01270:hover {
+        background: HighlightText;
+        border-color: Highlight;
+    }
+    .c01271 .c01270:hover+span {
+        background: Highlight;
+    }
+}
+
+.c01271 .c01270:disabled .c01270, .c01271 .c01270:disabled .c01267, .c01271 .c01270:disabled .c01273 {}
+
+@media (-ms-high-contrast:active) {
+    .c01271 .c01270:disabled .c01270, .c01271 .c01270:disabled .c01267, .c01271 .c01270:disabled .c01273 {
+        color: GrayText !important;
+        background: transparent;
+        border-color: GrayText !important;
+    }
+    .c01271 .c01270:disabled .c01270+span, .c01271 .c01270:disabled .c01267+span, .c01271 .c01270:disabled .c01273+span {
+        background: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01271 .c01270:focus, .js-focus-visible .c01271 .c01270.focus-visible, .js-focus-visible [data-focus-visible-added].c01271 .c01270 {
+        border-color: ButtonText !important;
+        box-shadow: 0 0 0 2px inset ButtonFace;
+    }
+}
+
+.c01272 {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01272 {
+        color: GrayText;
+        opacity: 1;
+    }
+}
+
+.c01272 .c01270, .c01272 .c01267, .c01272 .c01273 {
+    cursor: not-allowed !important;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01272 .c01270, .c01272 .c01267, .c01272 .c01273 {
+        color: GrayText !important;
+        background: transparent;
+        border-color: GrayText !important;
+    }
+    .c01272 .c01270+span, .c01272 .c01267+span, .c01272 .c01273+span {
+        background: GrayText !important;
+    }
+}
+
+.c01273 {
+    margin-top: 0;
+    user-select: none;
+    padding-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    float: left;
+    padding-left: 5px;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01273 {
+        fill: WindowText !important;
+        color: WindowText !important;
+    }
+}
+
+</style><style data-jss="" data-meta="Ft">.c01261 {
+    width: 30px;
+    heigth: 30px;
+    position: relative;
+}
+
+.c01261>* {
+    position: absolute;
+}
+
+.c01262 {
+    width: inherit;
+    height: inherit;
+}
+
+.c01263 {
+    width: inherit;
+    height: inherit;
+}
+
+</style><style data-jss="" data-meta="Ft - jssStyleSheet">.c01264 {
+    width: 48px;
+    height: 48px;
+}
+
+.c01265 {
+    top: 6px;
+    left: 6px;
+}
+
+</style><style data-jss="" data-meta="Js">.c01232 {
+    display: flex;
+    align-items: center;
+}
+
+.c01233 {
+    fill: #CC0000;
+    min-width: 16px;
+    margin-inline-end: 8px;
+}
+
+.c01234 {
+    color: #CC0000;
+    margin: 0px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c01235 {
+    display: flex;
+    flex-direction: column;
+}
+
+.c01235>* {
+    padding-block-end: 10px;
+}
+
+.c01236 {
+    margin: 0px;
+}
+
+.c01237 {
+    min-width: 0px;
+}
+
+.c01238 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 500px) {
+    .c01238 {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: unset;
+    }
+}
+
+.c01239 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block-end: 12px;
+    padding-inline-end: 32px;
+    padding-block-start: 12px;
+    padding-inline-start: 32px;
+}
+
+.c01240 {
+    border-bottom: 1px solid #B6B6B6;
+}
+
+.c01241 {
+    width: 48px;
+    height: 48px;
+}
+
+.c01242 {
+    height: 48px;
+    position: relative;
+}
+
+.c01243 {
+    margin: 0px;
+    display: inline;
+    margin-inline-end: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #2B2B2B;
+}
+
+.c01244 {
+    margin: 0px;
+    display: inline;
+    margin-inline-end: 6px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #2B2B2B;
+}
+
+.c01245 {
+    margin-inline-start: 4px;
+    font-weight: 400;
+    color: #767676;
+}
+
+.c01246 {
+    margin-inline-start: 12px;
+}
+
+.c01247 {
+    margin: 0px;
+    margin-block-end: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #2B2B2B;
+}
+
+.c01248 {
+    margin: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #767676;
+}
+
+.c01249 {
+    height: unset;
+    border: none;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    min-width: unset;
+    background: none;
+    transition: none;
+    border-radius: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0078D4;
+    fill: #0078D4;
+}
+
+.c01249:disabled {
+    cursor: default !important;
+    opacity: unset;
+    color: #767676;
+    fill: #767676;
+}
+
+.c01249:hover:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #0060A9;
+    color: #0066B4;
+    fill: #0066B4;
+}
+
+.c01249:focus:enabled {
+    outline: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px #838383;
+}
+
+.c01249:active:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #097DD5;
+    color: #1181D7;
+    fill: #1181D7;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01249 {
+        fill: LinkText;
+        color: LinkText;
+        forced-color-adjust: none;
+    }
+    .c01249:hover:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c01249:focus:enabled {
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c01249:active:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+}
+
+.c01250 {
+    margin-top: 12px;
+}
+
+.c01250>* {
+    margin-block-end: 10px;
+}
+
+.c01251 {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 6px;
+}
+
+.c01251>* {
+    margin-block-end: 10px;
+}
+
+.c01252 {
+    z-index: 9;
+    min-width: 200px;
+    text-align: end;
+}
+
+@media only screen and (max-width: 500px) {
+    .c01252 {
+        text-align: start;
+    }
+}
+
+.c01253 {
+    color: #767676;
+}
+
+.c01254 {
+    margin: 12px 0px 16px 0px;
+}
+
+.c01255 {
+    display: flex;
+}
+
+.c01255>* {
+    margin-inline-start: 8px;
+}
+
+.c01256 {
+    display: flex;
+}
+
+.c01256>* {
+    margin-inline-start: 8px;
+}
+
+.c01257 {
+    transition: all 100ms linear;
+}
+
+.c01258 {
+    transform: rotate(180deg);
+}
+
+.c01259 {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.c01260 {
+    width: 100%;
+}
+
+.c01260>* {
+    margin-block-end: 10px;
+}
+
+</style><style data-jss="" data-meta="BaseCard">.c01231 {
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.13), 0px 0px 2.9px rgba(0, 0, 0, 0.11);
+}
+
+@media (-ms-high-contrast:active) {
+    .c01231 {
+        border: 1px solid WindowText;
+    }
+}
+
+</style><style data-jss="" data-meta="BaseTypography">.c01221 {
+    margin-top: 0;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 0;
+    color: #2B2B2B;
+}
+
+.c01222 {
+    font-size: 60px;
+    line-height: 72px;
+}
+
+.c01223 {
+    font-size: 46px;
+    line-height: 56px;
+}
+
+.c01224 {
+    font-size: 34px;
+    line-height: 44px;
+}
+
+.c01225 {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.c01226 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.c01227 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.c01228 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c01229 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.c01230 {
+    font-size: 10px;
+    line-height: 16px;
+}
+
+</style><style data-jss="" data-meta="MSFTHeading">.c01213 {}
+
+.c01213.c01214, .c01213.c01215, .c01213.c01216, .c01213.c01217, .c01213.c01218, .c01213.c01219, .c01213.c01220 {
+    cursor: default;
+    font-weight: 600;
+}
+
+.c01214 {}
+
+.c01215 {}
+
+.c01216 {}
+
+.c01217 {}
+
+.c01218 {}
+
+.c01219 {}
+
+.c01220 {}
+
+</style><style data-jss="" data-meta="MSFTButtonBase">.c01207 {
+    position: relative;
+}
+
+.c01207::before {
+    width: 100%;
+    bottom: -3px;
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1px;
+    left: 0;
+}
+
+.c01207 svg {
+    width: 16px;
+    height: 16px;
+}
+
+.c01208 {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01208 {
+        color: GrayText;
+        opacity: 1;
+    }
+}
+
+.c01209 {
+    width: 16px;
+    height: 16px;
+}
+
+.c01210 {
+    width: 16px;
+    height: 16px;
+}
+
+.c01211 {}
+
+.c01211 .c01209 {
+    margin-right: 12px;
+}
+
+.c01211 .c01210 {
+    margin-left: 12px;
+}
+
+.c01212 {
+    cursor: pointer;
+    display: inline-flex;
+    overflow: hidden;
+    max-width: 374px;
+    box-sizing: border-box;
+    transition: all 0.1s ease-in-out;
+    line-height: 1;
+    font-family: inherit;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    min-width: 32px;
+    padding: 0 10px;
+    height: 32px;
+    color: #2B2B2B;
+    fill: #2B2B2B;
+    background: #FFFFFF;
+}
+
+.c01212::-moz-focus-inner {
+    border: 0;
+}
+
+.c01212:hover:enabled, a.c01212:not(.c01208):hover {
+    background-color: #F2F2F2;
+}
+
+.c01212:active:enabled, a.c01212:not(.c01208):active {
+    background-color: #F7F7F7;
+}
+
+.c01212:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01212:focus, .js-focus-visible .c01212.focus-visible, .js-focus-visible [data-focus-visible-added].c01212 {
+    border-color: #888888;
+}
+
+.c01212:disabled {}
+
+@media (-ms-high-contrast:active) {
+    .c01212 {
+        fill: ButtonText;
+        color: ButtonText;
+        border: none;
+        background: ButtonFace;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+a.c01212:not(.c01208) {}
+
+@media (-ms-high-contrast:active) {
+    a.c01212:not(.c01208) {
+        fill: LinkText !important;
+        color: LinkText !important;
+        background: Window;
+        border-color: LinkText !important;
+    }
+}
+
+a.c01212:not(.c01208):not(.c01208):hover {}
+
+a.c01212:not(.c01208).c01208 {}
+
+@media (-ms-high-contrast:active) {
+    a.c01212:not(.c01208).c01208 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    a.c01212:not(.c01208):not(.c01208):hover {
+        background: ButtonFace;
+        box-shadow: 0 0 0 1px inset LinkText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01212:disabled {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01212:focus, .js-focus-visible .c01212.focus-visible, .js-focus-visible [data-focus-visible-added].c01212 {
+        border-color: ButtonText;
+        box-shadow: 0 0 0 1px inset ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01212:hover:enabled, a.c01212:not(.c01208):hover {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+</style><style data-jss="" data-meta="withRouter(O)">::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #929292;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb {
+        background: ButtonText;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ACACAC;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb:hover {
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #9F9F9F;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb:active {
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-corner {
+    background: none;
+}
+
+.c01182 {
+    border-top: 1px solid #B6B6B6;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.c01183 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.c01184 {
+    flex: 1;
+    margin: 0px;
+    font-size: 14px;
+    margin-inline-end: 8px;
+    color: #2B2B2B;
+}
+
+.c01184>a {
+    border-bottom: 1px solid #0072C9;
+    text-decoration: none;
+    color: #0078D4;
+}
+
+.c01184>a:hover {
+    border-bottom: 2px solid #0060A9;
+    color: #0066B4;
+}
+
+.c01184>a:active {
+    border-bottom: 2px solid #097DD5;
+    color: #1181D7;
+}
+
+.c01184>a:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01184>a:focus, .js-focus-visible .c01184>a.focus-visible, .js-focus-visible [data-focus-visible-added].c01184>a {
+    border-bottom: 2px solid #838383;
+}
+
+.c01185 {
+    margin-top: 4px;
+}
+
+.c01186 {
+    height: unset;
+    border: none;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    min-width: unset;
+    background: none;
+    transition: none;
+    border-radius: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0078D4;
+    fill: #0078D4;
+}
+
+.c01186:disabled {
+    cursor: default !important;
+    opacity: unset;
+    color: #767676;
+    fill: #767676;
+}
+
+.c01186:hover:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #0060A9;
+    color: #0066B4;
+    fill: #0066B4;
+}
+
+.c01186:focus:enabled {
+    outline: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px #838383;
+}
+
+.c01186:active:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #097DD5;
+    color: #1181D7;
+    fill: #1181D7;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01186 {
+        fill: LinkText;
+        color: LinkText;
+        forced-color-adjust: none;
+    }
+    .c01186:hover:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c01186:focus:enabled {
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c01186:active:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+}
+
+.c01187 {
+    margin: 0;
+    min-width: fit-content;
+    word-break: break-word;
+}
+
+.c01188 {
+    margin: 0;
+    z-index: 4;
+    max-width: 820px;
+    min-width: 215px;
+    user-select: none;
+    padding-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 4px;
+    color: #2B2B2B;
+}
+
+.c01189 {
+    padding: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 18px;
+    list-style-type: none;
+}
+
+.c01190 {
+    width: 820px;
+    min-width: 215px;
+    max-width: 820px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.c01191 {}
+
+.c01192 {}
+
+.c01193 {}
+
+.c01194 {
+    color: #101010;
+    background-color: #FFEB3B;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01194 {
+        color: HighlightText;
+        background-color: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+.c01195 {
+    width: 100%;
+    height: 100%;
+}
+
+.c01195:focus {
+    outline: none;
+}
+
+.c01196 {
+    width: 100%;
+    height: 100%;
+}
+
+.c01197 {
+    flex: 0 1 auto;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 820px;
+    min-width: 215px;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+.c01198 {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    min-width: 36px;
+    max-width: unset;
+    transition: none;
+    background: transparent;
+    margin-inline-start: -40px;
+}
+
+.c01198:hover:not([disabled]) {}
+
+.c01198>* {
+    display: flex !important;
+}
+
+.c01198:disabled {}
+
+@media (-ms-high-contrast:active) {
+    .c01198 {
+        fill: ButtonText;
+        forced-color-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01198:disabled {
+        fill: GrayText;
+        forced-color-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01198:hover:not([disabled]) {
+        fill: HighlightText !important;
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+.c01199 {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.c01200 {
+    width: 16px;
+    height: 16px;
+    fill: #0078D4;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01200 {
+        fill: ButtonText;
+        forced-color-adjust: none;
+    }
+    .c01200:hover {
+        fill: HighlightText;
+    }
+}
+
+.c01201 {
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    padding-inline-end: 6px;
+    padding-inline-start: 4px;
+    color: #0078D4;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01201 {
+        color: LinkText;
+        forced-color-adjust: none;
+    }
+}
+
+.c01202 {
+    padding-top: 32px;
+}
+
+.c01203 {
+    display: flex;
+    overflow: hidden;
+    flex-flow: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    margin-inline-end: 4px;
+}
+
+.c01204 {
+    padding-top: 34px;
+}
+
+.c01205 {}
+
+</style><style data-jss="" data-meta="B">.c01180 {
+    display: flex;
+    border-radius: 4px;
+    flex-direction: column;
+}
+
+.c01181 {
+    max-width: 820px;
+    min-width: 250px;
+    padding-top: 4px;
+    margin-bottom: 18px;
+    padding-bottom: 4px;
+    margin-inline-end: 50px;
+    margin-inline-start: 50px;
+}
+
+</style><style data-jss="" data-meta="withRouter(O) - jssStyleSheet">.c01206 {
+    margin-inline-end: 50px;
+    margin-inline-start: 50px;
+}
+
+</style><style data-jss="" data-meta="Canvas">.c01177 {
+    flex: 1;
+    overflow: hidden;
+}
+
+</style><style data-jss="" data-meta="MSFTToggle">.c01169 {
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    color: #262626;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01169 {
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+.c01170 {
+    clear: both;
+    cursor: pointer;
+    display: block;
+    padding-bottom: 7px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c01171 {
+    cursor: pointer;
+    position: relative;
+    margin-top: 0;
+    float: left;
+}
+
+.c01172 {
+    position: absolute;
+    transition: all .1s ease;
+    pointer-events: none;
+    top: 5px;
+    left: 5px;
+    right: unset;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    background: #262626;
+}
+
+.c01173 {
+    cursor: pointer;
+    margin: 0;
+    display: block;
+    outline: none;
+    position: relative;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #F7F7F7;
+    border: 1px solid #B6B6B6;
+    border-radius: 20px;
+}
+
+.c01173:active {
+    background: #F7F7F7;
+    border-color: #CECECE;
+}
+
+.c01173:hover {
+    background: #F7F7F7;
+    border-color: #909090;
+}
+
+.c01173:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01173:focus, .js-focus-visible .c01173.focus-visible, .js-focus-visible [data-focus-visible-added].c01173 {
+    box-shadow: 0 0 0 1px #838383 inset;
+    border-color: #838383;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01173 {
+        background: Window;
+        border-color: ButtonText;
+    }
+    .c01173+span {
+        background: ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01173:focus, .js-focus-visible .c01173.focus-visible, .js-focus-visible [data-focus-visible-added].c01173 {
+        box-shadow: 0 0 0 1px ButtonText inset;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01173:hover {
+        background: Window;
+        border-color: Highlight;
+    }
+    .c01173:hover+span {
+        background: Highlight;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01173:active {
+        background: Highlight;
+        border-color: HighlightText;
+    }
+    .c01173:active+span {
+        background: HighlightText;
+    }
+}
+
+.c01174 {}
+
+.c01174 .c01173 {
+    background: #0078D4;
+    border-color: #0078D4;
+}
+
+.c01174 .c01172 {
+    left: 25px;
+    right: unset;
+    background: #FFFFFF;
+}
+
+.c01174 .c01173:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01174 .c01173:focus, .js-focus-visible .c01174 .c01173.focus-visible, .js-focus-visible [data-focus-visible-added].c01174 .c01173 {
+    box-shadow: 0 0 0 1px #838383 inset, 0 0 0 3px #F2F8FD inset;
+    border-color: #838383;
+}
+
+.c01174 .c01173:disabled {}
+
+.c01174 .c01173:hover {}
+
+.c01174 .c01173:active {}
+
+@media (-ms-high-contrast:active) {
+    .c01174 .c01173 {
+        background: Highlight;
+        border-color: Highlight;
+    }
+    .c01174 .c01173+span {
+        background: HighlightText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01174 .c01173:active {
+        background: Highlight !important;
+        border-color: Highlight !important;
+    }
+    .c01174 .c01173:active+span {
+        background: HighlightText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01174 .c01173:hover {
+        background: HighlightText;
+        border-color: Highlight;
+    }
+    .c01174 .c01173:hover+span {
+        background: Highlight;
+    }
+}
+
+.c01174 .c01173:disabled .c01173, .c01174 .c01173:disabled .c01170, .c01174 .c01173:disabled .c01176 {}
+
+@media (-ms-high-contrast:active) {
+    .c01174 .c01173:disabled .c01173, .c01174 .c01173:disabled .c01170, .c01174 .c01173:disabled .c01176 {
+        color: GrayText !important;
+        background: transparent;
+        border-color: GrayText !important;
+    }
+    .c01174 .c01173:disabled .c01173+span, .c01174 .c01173:disabled .c01170+span, .c01174 .c01173:disabled .c01176+span {
+        background: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01174 .c01173:focus, .js-focus-visible .c01174 .c01173.focus-visible, .js-focus-visible [data-focus-visible-added].c01174 .c01173 {
+        border-color: ButtonText !important;
+        box-shadow: 0 0 0 2px inset ButtonFace;
+    }
+}
+
+.c01175 {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01175 {
+        color: GrayText;
+        opacity: 1;
+    }
+}
+
+.c01175 .c01173, .c01175 .c01170, .c01175 .c01176 {
+    cursor: not-allowed !important;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01175 .c01173, .c01175 .c01170, .c01175 .c01176 {
+        color: GrayText !important;
+        background: transparent;
+        border-color: GrayText !important;
+    }
+    .c01175 .c01173+span, .c01175 .c01170+span, .c01175 .c01176+span {
+        background: GrayText !important;
+    }
+}
+
+.c01176 {
+    margin-top: 0;
+    user-select: none;
+    padding-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    float: left;
+    padding-left: 5px;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01176 {
+        fill: WindowText !important;
+        color: WindowText !important;
+    }
+}
+
+</style><style data-jss="" data-meta="BaseLabel">.c01167 {
+    display: inline-block;
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #262626;
+}
+
+.c01168 {
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+}
+
+</style><style data-jss="" data-meta="Bs">::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #8D8D8D;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb {
+        background: ButtonText;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A7A7A7;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb:hover {
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #9A9A9A;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb:active {
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-corner {
+    background: none;
+}
+
+.c01152 {
+    border-top: 1px solid #B6B6B6;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.c01153 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.c01154 {
+    flex: 1;
+    margin: 0px;
+    font-size: 14px;
+    margin-inline-end: 8px;
+    color: #262626;
+}
+
+.c01154>a {
+    border-bottom: 1px solid #0072C9;
+    text-decoration: none;
+    color: #0072C9;
+}
+
+.c01154>a:hover {
+    border-bottom: 2px solid #0060A9;
+    color: #0060A9;
+}
+
+.c01154>a:active {
+    border-bottom: 2px solid #097DD5;
+    color: #097DD5;
+}
+
+.c01154>a:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01154>a:focus, .js-focus-visible .c01154>a.focus-visible, .js-focus-visible [data-focus-visible-added].c01154>a {
+    border-bottom: 2px solid #838383;
+}
+
+.c01155 {
+    margin-top: 4px;
+}
+
+.c01156 {
+    height: unset;
+    border: none;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    min-width: unset;
+    background: none;
+    transition: none;
+    border-radius: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0072C9;
+    fill: #0072C9;
+}
+
+.c01156:disabled {
+    cursor: default !important;
+    opacity: unset;
+    color: #717171;
+    fill: #717171;
+}
+
+.c01156:hover:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #0060A9;
+    color: #0060A9;
+    fill: #0060A9;
+}
+
+.c01156:focus:enabled {
+    outline: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px #838383;
+}
+
+.c01156:active:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #097DD5;
+    color: #097DD5;
+    fill: #097DD5;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01156 {
+        fill: LinkText;
+        color: LinkText;
+        forced-color-adjust: none;
+    }
+    .c01156:hover:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c01156:focus:enabled {
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c01156:active:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+}
+
+.c01157 {
+    margin: 0;
+    z-index: 4;
+    overflow: hidden;
+    max-width: 820px;
+    min-width: 215px;
+    padding-top: 34px;
+    margin-left: 50px;
+    white-space: nowrap;
+    margin-right: 50px;
+    text-overflow: ellipsis;
+    padding-bottom: 16px;
+    color: #262626;
+}
+
+.c01158 {
+    margin: 0;
+    z-index: 4;
+    max-width: 820px;
+    min-width: 215px;
+    user-select: none;
+    padding-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 4px;
+    color: #262626;
+}
+
+.c01159 {
+    padding: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 18px;
+    list-style-type: none;
+}
+
+.c01160 {
+    width: 820px;
+    min-width: 215px;
+    max-width: 820px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.c01161 {}
+
+.c01162 {}
+
+.c01163 {}
+
+.c01164 {
+    color: #101010;
+    background-color: #FFEB3B;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01164 {
+        color: HighlightText;
+        background-color: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+.c01165 {
+    width: 100%;
+    height: 100%;
+}
+
+.c01165:focus {
+    outline: none;
+}
+
+.c01166 {
+    width: 100%;
+    height: 100%;
+}
+
+</style><style data-jss="" data-meta="O">.c01137 {
+    cursor: pointer;
+    position: relative;
+    color: #262626;
+    background: #F7F7F7;
+}
+
+.c01137:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01137:focus>.c01140, .js-focus-visible .c01137.focus-visible>.c01140, .js-focus-visible [data-focus-visible-added].c01137>.c01140 {
+    border: 2px solid #838383;
+}
+
+body:not(.js-focus-visible) .c01137:focus>.c01150 .c01140, .js-focus-visible .c01137.focus-visible>.c01150 .c01140, .js-focus-visible [data-focus-visible-added].c01137>.c01150 .c01140 {
+    border: 2px solid #838383;
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01137:focus>.c01150 .c01140, .js-focus-visible .c01137.focus-visible>.c01150 .c01140, .js-focus-visible [data-focus-visible-added].c01137>.c01150 .c01140 {
+        border-color: ButtonText !important;
+        box-shadow: 0 0 0 2px inset ButtonFace;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01137:focus>.c01140, .js-focus-visible .c01137.focus-visible>.c01140, .js-focus-visible [data-focus-visible-added].c01137>.c01140 {
+        border-color: ButtonText !important;
+        box-shadow: 0 0 0 2px inset ButtonFace;
+    }
+}
+
+.c01138 {
+    width: 16px;
+    height: 16px;
+    fill: #262626;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01138 {
+        fill: ButtonText;
+    }
+}
+
+.c01139 {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.c01140 {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    height: 32px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+}
+
+.c01140:hover {
+    background: #EAEAEA;
+}
+
+.c01140:active {
+    background: #EFEFEF;
+}
+
+.c01140::before {
+    width: 0;
+    content: '';
+    display: block;
+    flex-shrink: 0;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01140 {
+        color: ButtonText;
+        -ms-high-contrast-adjust: none;
+        border: 2px solid transparent;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01140:hover {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+.c01140:hover .c01144, .c01140:hover .c01138 {}
+
+@media (-ms-high-contrast:active) {
+    .c01140:hover .c01144, .c01140:hover .c01138 {
+        fill: HighlightText;
+    }
+}
+
+.c01141 {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.c01142 {
+    display: none;
+    font-size: calc(1em + 20px);
+}
+
+.c01142 .c01140 {}
+
+.c01142 .c01140::before {
+    width: 1em;
+}
+
+.c01143 {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    display: flex;
+    background: none;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.c01144 {
+    transition: transform .1s linear;
+    pointer-events: none;
+    width: 16px;
+    height: 16px;
+    transform: rotate(-45deg);
+    fill: #262626;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01144 {
+        fill: ButtonText;
+    }
+}
+
+.c01145 {}
+
+.c01145>.c01140 .c01144, .c01145>.c01150 .c01140 .c01144 {
+    transform: rotate(0deg);
+}
+
+.c01145>.c01142 {
+    display: block;
+}
+
+.c01146 {}
+
+.c01146>.c01140, .c01146>.c01150>.c01140 {
+    background: #E5E5E5;
+}
+
+.c01146::after {
+    width: 3px;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 6px;
+    height: 20px;
+    background: #0072C9;
+    left: 2px;
+    right: unset;
+    border-radius: 2px;
+}
+
+.c01146>.c01140 .c01138, .c01146>.c01140 .c01144, .c01146>.c01150 .c01144, .c01146>.c01150 .c01138 {}
+
+@media (-ms-high-contrast:active) {
+    .c01146>.c01140 .c01138, .c01146>.c01140 .c01144, .c01146>.c01150 .c01144, .c01146>.c01150 .c01138 {
+        fill: HighlightText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01146::after {
+        background: HighlightText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01146>.c01140, .c01146>.c01150>.c01140 {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+.c01147 {
+    background: #EAEAEA;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01147 {
+        background: Window;
+    }
+}
+
+.c01148 {
+    border-top: 2px solid #838383;
+}
+
+.c01149 {
+    border-bottom: 2px solid #838383;
+}
+
+.c01150 {}
+
+.c01151 {}
+
+.c01151 .c01141 {
+    position: relative;
+    margin-left: 32px;
+}
+
+.c01151 .c01143 {
+    position: absolute;
+    left: -32px;
+}
+
+</style><style data-jss="" data-meta="u">.c01136 {
+    display: flex;
+    min-width: fit-content;
+    font-size: 0;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.c01136:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01136:focus, .js-focus-visible .c01136.focus-visible, .js-focus-visible [data-focus-visible-added].c01136 {}
+
+</style><style data-jss="" data-meta="MSFTTextField">.c01133 {
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    background: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    color: #2B2B2B;
+    padding: 0 11px;
+    border-radius: 2px;
+    height: 32px;
+}
+
+.c01133:hover:enabled {
+    background: #FFFFFF;
+    border-color: #979797;
+}
+
+.c01133:active:enabled {
+    background: #FFFFFF;
+    border-color: #D6D6D6;
+}
+
+.c01133:focus:enabled {
+    outline: none;
+    box-shadow: 0 0 0 1px #888888 inset;
+    border-color: #888888;
+}
+
+.c01133:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+.c01133::placeholder {
+    color: #767676;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01133 {
+        color: ButtonText;
+        background: ButtonFace;
+        border-color: ButtonText;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01133::placeholder {
+        color: GrayText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01133:disabled {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01133:focus:enabled {
+        border-color: ButtonText;
+        box-shadow: 0 0 0 1px inset ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01133:hover:enabled {
+        background: ButtonFace;
+        border: 1px solid Highlight;
+    }
+}
+
+.c01134 {
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    background: #EDEDED;
+    border: 1px solid transparent;
+    color: #2B2B2B;
+    padding: 0 11px;
+    border-radius: 2px;
+}
+
+.c01134:hover:enabled {
+    border-color: transparent;
+    background: #E5E5E5;
+}
+
+.c01134:active:enabled {
+    border-color: transparent;
+}
+
+.c01134:focus:enabled {
+    border-color: #888888;
+}
+
+.c01134:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+.c01134::placeholder {
+    color: #6B6B6B;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01134 {
+        background: ButtonFace;
+        border-color: ButtonText;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01134::placeholder {
+        color: GrayText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01134:disabled {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01134:hover:enabled {
+        background: ButtonFace;
+        border: 1px solid Highlight;
+    }
+}
+
+</style><style data-jss="" data-meta="MSFTTextAction">.c01123 {
+    margin: 0;
+    display: flex;
+    position: relative;
+    min-width: 92px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    flex-direction: row;
+    height: 32px;
+    border: 1px solid #BEBEBE;
+    background: #FFFFFF;
+    border-radius: 2px;
+}
+
+.c01123:hover {
+    background: #FFFFFF;
+    border-color: #979797;
+}
+
+.c01123:active {
+    background: #FFFFFF;
+    border-color: #D6D6D6;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01123 {
+        fill: ButtonText;
+        color: ButtonText;
+        background: ButtonFace;
+        border-color: ButtonText;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01123:hover {
+        background: transparent;
+        border-color: Highlight;
+    }
+}
+
+.c01124 {
+    background: #EDEDED;
+    border: 1px solid transparent;
+}
+
+.c01124:hover {
+    border-color: transparent;
+    background: #E5E5E5;
+}
+
+.c01124:active {
+    border-color: transparent;
+    background: #F2F2F2;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01124 {
+        background: ButtonFace;
+        border: 1px solid ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01124:hover {
+        background: ButtonFace;
+        border-color: Highlight;
+    }
+}
+
+.c01125 {}
+
+.c01126 {}
+
+.c01126, .c01126:hover {
+    box-shadow: 0 0 0 1px #888888 inset;
+    border: 1px solid #888888;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01126 {}
+    .c01126, .c01126:hover {
+        box-shadow: 0 0 0 1px ButtonText inset;
+        border: 1px solid ButtonText;
+    }
+}
+
+.c01127 {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01127 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+.c01127:hover {
+    background: #FFFFFF;
+    border-color: #BEBEBE;
+}
+
+.c01127:active {
+    background: #FFFFFF;
+    border-color: #BEBEBE;
+}
+
+.c01127 .c01129, .c01127 .c01130 {}
+
+@media (-ms-high-contrast:active) {
+    .c01127 .c01129, .c01127 .c01130 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+    }
+}
+
+.c01128 {
+    top: 0;
+    flex: 0 0 auto;
+    margin: 2px;
+    cursor: pointer;
+    padding: 0 5px;
+    min-width: fit-content;
+    transition: color .1s, background-color .1s, border-color 0.2s ease-in-out;
+    border-color: transparent;
+    color: #2B2B2B;
+    fill: #2B2B2B;
+    height: calc(32px - 6px);
+    left: 0;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01128 {
+        fill: ButtonText;
+        background: ButtonFace;
+    }
+}
+
+.c01128:hover {}
+
+.c01128:active {}
+
+.c01128:disabled {}
+
+.c01128:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c01128:focus, .js-focus-visible .c01128.focus-visible, .js-focus-visible [data-focus-visible-added].c01128 {}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c01128:focus, .js-focus-visible .c01128.focus-visible, .js-focus-visible [data-focus-visible-added].c01128 {
+        fill: HighlightText;
+        background: Highlight;
+        border-color: ButtonText !important;
+        box-shadow: 0 0 0 2px inset ButtonFace;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01128:active {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01128:hover {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+.c01129 {
+    margin: auto;
+    width: 16px;
+    height: 16px;
+    fill: #2B2B2B;
+    margin-left: 11px;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01129 {
+        fill: ButtonText !important;
+        color: ButtonText !important;
+    }
+}
+
+.c01130 {
+    margin: auto;
+    width: 16px;
+    height: 16px;
+    fill: #2B2B2B;
+    margin-right: 11px;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01130 {
+        fill: ButtonText !important;
+        color: ButtonText !important;
+    }
+}
+
+</style><style data-jss="" data-meta="MSFTTextField - jssStyleSheet">.c01135 {
+    flex: 1 0 0px;
+    height: calc(100% - 4px);
+    margin: 2px 1px;
+    border: none;
+    min-width: inherit;
+    background: transparent;
+}
+
+.c01135:hover, .c01135:hover:enabled, .c01135:disabled, .c01135:active, .c01135:active:enabled, .c01135:focus, .c01135:focus:enabled {
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01135 {
+        fill: ButtonText !important;
+        color: ButtonText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c01135:hover, .c01135:hover:enabled, .c01135:disabled, .c01135:active, .c01135:active:enabled, .c01135:focus, .c01135:focus:enabled {
+        background: ButtonFace;
+    }
+}
+
+</style><style data-jss="" data-meta="BaseTypography">.c01113 {
+    margin-top: 0;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 0;
+    color: #262626;
+}
+
+.c01114 {
+    font-size: 60px;
+    line-height: 72px;
+}
+
+.c01115 {
+    font-size: 46px;
+    line-height: 56px;
+}
+
+.c01116 {
+    font-size: 34px;
+    line-height: 44px;
+}
+
+.c01117 {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.c01118 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.c01119 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.c01120 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c01121 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.c01122 {
+    font-size: 10px;
+    line-height: 16px;
+}
+
+</style><style data-jss="" data-meta="MSFTTextAction - jssStyleSheet">.c01131 {
+    min-height: 34px;
+}
+
+.c01132 {
+    margin-left: 12px;
+}
+
+</style><style data-jss="" data-meta="MSFTHeading">.c01104 {}
+
+.c01104.c01105, .c01104.c01106, .c01104.c01107, .c01104.c01108, .c01104.c01109, .c01104.c01110, .c01104.c01111 {
+    cursor: default;
+    font-weight: 600;
+}
+
+.c01105 {}
+
+.c01106 {}
+
+.c01107 {}
+
+.c01108 {}
+
+.c01109 {}
+
+.c01110 {}
+
+.c01111 {}
+
+</style><style data-jss="" data-meta="MSFTButton">.c0193 {
+    cursor: pointer;
+    display: inline-flex;
+    overflow: hidden;
+    max-width: 374px;
+    box-sizing: border-box;
+    transition: all 0.1s ease-in-out;
+    line-height: 1;
+    font-family: inherit;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    min-width: 32px;
+    padding: 0 10px;
+    height: 32px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    color: #262626;
+    fill: #262626;
+    background: #E5E5E5;
+}
+
+.c0193:hover:enabled, a.c0193:not(.c01100):hover {
+    background: #DDDDDD;
+}
+
+.c0193:active:enabled, a.c0193:not(.c01100):active {
+    background: #EAEAEA;
+}
+
+.c0193:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0193:focus, .js-focus-visible .c0193.focus-visible, .js-focus-visible [data-focus-visible-added].c0193 {
+    border-color: #838383;
+}
+
+.c0193:disabled {}
+
+.c0193::-moz-focus-inner {
+    border: 0;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0193 {
+        fill: ButtonText;
+        color: ButtonText;
+        background: ButtonFace;
+        border-color: ButtonText;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+a.c0193:not(.c01100) {}
+
+@media (-ms-high-contrast:active) {
+    a.c0193:not(.c01100) {
+        fill: LinkText !important;
+        color: LinkText !important;
+        background: Window;
+        border-color: LinkText !important;
+    }
+}
+
+a.c0193:not(.c01100):not(.c01100):hover {}
+
+a.c0193:not(.c01100).c01100 {}
+
+@media (-ms-high-contrast:active) {
+    a.c0193:not(.c01100).c01100 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+a.c0193:not(.c01100).c01100:hover {}
+
+@media (-ms-high-contrast:active) {
+    a.c0193:not(.c01100).c01100:hover {
+        box-shadow: none !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    a.c0193:not(.c01100):not(.c01100):hover {
+        background: ButtonFace;
+        box-shadow: 0 0 0 1px inset LinkText !important;
+    }
+}
+
+a.c0193:not(.c01100):not(.c01100):hover .c01101, a.c0193:not(.c01100):not(.c01100):hover .c01102 {}
+
+@media (-ms-high-contrast:active) {
+    a.c0193:not(.c01100):not(.c01100):hover .c01101, a.c0193:not(.c01100):not(.c01100):hover .c01102 {
+        fill: LinkText !important;
+        color: LinkText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0193:disabled {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c0193:focus, .js-focus-visible .c0193.focus-visible, .js-focus-visible [data-focus-visible-added].c0193 {
+        border-color: ButtonText;
+        box-shadow: 0 0 0 1px inset ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0193:hover:enabled, a.c0193:not(.c01100):hover {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+.c0193:hover:enabled .c01101, .c0193:hover:enabled .c01102, a.c0193:not(.c01100):hover .c01101, a.c0193:not(.c01100):hover .c01102 {}
+
+@media (-ms-high-contrast:active) {
+    .c0193:hover:enabled .c01101, .c0193:hover:enabled .c01102, a.c0193:not(.c01100):hover .c01101, a.c0193:not(.c01100):hover .c01102 {
+        fill: HighlightText !important;
+        color: HighlightText !important;
+    }
+}
+
+.c0194 {
+    color: #FFFFFF;
+    fill: #FFFFFF;
+    background: #0078D4;
+}
+
+.c0194:hover:enabled, a.c0194:not(.c01100):hover {
+    background: #006CBE;
+}
+
+.c0194:active:enabled, a.c0194:not(.c01100):active {
+    background: #1683D8;
+}
+
+.c0194:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0194:focus, .js-focus-visible .c0194.focus-visible, .js-focus-visible [data-focus-visible-added].c0194 {
+    border-color: #838383;
+    box-shadow: 0 0 0 2px inset #F2F8FD;
+}
+
+.c0194 .c01101, .c0194 .c01102 {
+    fill: #FFFFFF;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0194 {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+        border-color: Highlight;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+a.c0194:not(.c01100) {}
+
+a.c0194:not(.c01100) .c01101, a.c0194:not(.c01100) .c01102 {}
+
+@media (-ms-high-contrast:active) {
+    a.c0194:not(.c01100) .c01101, a.c0194:not(.c01100) .c01102 {
+        fill: LinkText !important;
+        color: LinkText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c0194:focus, .js-focus-visible .c0194.focus-visible, .js-focus-visible [data-focus-visible-added].c0194 {
+        border-color: ButtonText !important;
+        box-shadow: 0 0 0 2px inset ButtonFace;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0194:hover:enabled, a.c0194:not(.c01100):hover {
+        fill: Highlight;
+        color: Highlight;
+        background: HighlightText;
+        border-color: Highlight;
+    }
+}
+
+.c0195 {
+    background: transparent;
+    border: 1px solid #B6B6B6;
+    padding: 0 11px;
+}
+
+.c0195:hover:enabled, a.c0195:not(.c01100):hover {
+    background: transparent;
+    border: 1px solid #909090;
+}
+
+.c0195:active:enabled, a.c0195:not(.c01100):active {
+    background: transparent;
+    border: 1px solid #CECECE;
+}
+
+.c0195:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0195:focus, .js-focus-visible .c0195.focus-visible, .js-focus-visible [data-focus-visible-added].c0195 {
+    box-shadow: 0 0 0 1px #838383 inset;
+    border-color: #838383;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0195 {
+        fill: ButtonText;
+        color: ButtonText;
+        background: ButtonFace;
+        border-color: ButtonText;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c0195:focus, .js-focus-visible .c0195.focus-visible, .js-focus-visible [data-focus-visible-added].c0195 {
+        border-color: ButtonText;
+        box-shadow: 0 0 0 1px inset ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0195:hover:enabled, a.c0195:not(.c01100):hover {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+.c0196 {
+    background-color: transparent;
+    color: #0072C9;
+    fill: #0072C9;
+}
+
+.c0196:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0196:focus, .js-focus-visible .c0196.focus-visible, .js-focus-visible [data-focus-visible-added].c0196 {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.c0196 .c0199::before {}
+
+.c0196:hover .c0199::before {
+    background: #0060A9;
+}
+
+.c0196:hover.c01100 .c0199::before {
+    display: none;
+}
+
+.c0196:active .c0199::before {
+    background: #097DD5;
+}
+
+.c0196.c01100, .c0196.c01100 .c0199::before {
+    background-color: transparent;
+}
+
+.c0196:hover:enabled, a.c0196:not(.c01100):hover {
+    background-color: transparent;
+    color: #0060A9;
+}
+
+.c0196:active:enabled, a.c0196:not(.c01100):active {
+    background-color: transparent;
+    color: #097DD5;
+    fill: #097DD5;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0196 {
+        fill: ButtonText;
+        color: ButtonText;
+        border: none;
+        background: ButtonFace;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+a.c0196:not(.c01100) {}
+
+a.c0196:not(.c01100):not(.c01100):hover {}
+
+a.c0196:not(.c01100).c01100 {}
+
+a.c0196:not(.c01100) .c0199::before {}
+
+@media (-ms-high-contrast:active) {
+    a.c0196:not(.c01100) .c0199::before {
+        background: transparent;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    a.c0196:not(.c01100).c01100 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    a.c0196:not(.c01100):not(.c01100):hover {
+        fill: LinkText !important;
+        color: LinkText !important;
+        box-shadow: none !important;
+    }
+}
+
+a.c0196:not(.c01100):not(.c01100):hover .c0199::before {}
+
+@media (-ms-high-contrast:active) {
+    a.c0196:not(.c01100):not(.c01100):hover .c0199::before {
+        background: LinkText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0196:hover:enabled, a.c0196:not(.c01100):hover {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+.c0196:hover:enabled .c01101, .c0196:hover:enabled .c01102, a.c0196:not(.c01100):hover .c01101, a.c0196:not(.c01100):hover .c01102 {
+    fill: #0060A9;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0196:hover:enabled .c01101, .c0196:hover:enabled .c01102, a.c0196:not(.c01100):hover .c01101, a.c0196:not(.c01100):hover .c01102 {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0196:hover .c0199::before {
+        background: Highlight;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0196 .c0199::before {
+        background: ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c0196:focus, .js-focus-visible .c0196.focus-visible, .js-focus-visible [data-focus-visible-added].c0196 {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+body:not(.js-focus-visible) .c0196:focus .c0199::before, .js-focus-visible .c0196.focus-visible .c0199::before, .js-focus-visible [data-focus-visible-added].c0196 .c0199::before {
+    background: #262626;
+    height: 2px;
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c0196:focus .c0199::before, .js-focus-visible .c0196.focus-visible .c0199::before, .js-focus-visible [data-focus-visible-added].c0196 .c0199::before {
+        background: Highlight;
+    }
+}
+
+.c0197 {
+    min-width: 74px;
+    padding-left: 0;
+    border-width: 0;
+    padding-right: 0;
+    justify-content: flex-start;
+    background-color: transparent;
+    color: #0072C9;
+    fill: #0072C9;
+}
+
+.c0197:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0197:focus, .js-focus-visible .c0197.focus-visible, .js-focus-visible [data-focus-visible-added].c0197 {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.c0197 .c0199::before {}
+
+.c0197:hover .c0199::before {
+    background: #0060A9;
+}
+
+.c0197:hover.c01100 .c0199::before {
+    display: none;
+}
+
+.c0197:active .c0199::before {
+    background: #097DD5;
+}
+
+.c0197.c01100, .c0197.c01100 .c0199::before {
+    background-color: transparent;
+}
+
+.c0197:hover:enabled, a.c0197:not(.c01100):hover {
+    background-color: transparent;
+    color: #0060A9;
+}
+
+.c0197:active:enabled, a.c0197:not(.c01100):active {
+    background-color: transparent;
+    color: #097DD5;
+    fill: #097DD5;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0197 {
+        fill: ButtonText;
+        color: ButtonText;
+        border: none;
+        background: ButtonFace;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+a.c0197:not(.c01100) {}
+
+a.c0197:not(.c01100):not(.c01100):hover {}
+
+a.c0197:not(.c01100).c01100 {}
+
+@media (-ms-high-contrast:active) {
+    a.c0197:not(.c01100).c01100 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    a.c0197:not(.c01100):not(.c01100):hover {
+        fill: LinkText !important;
+        color: LinkText !important;
+        box-shadow: none !important;
+    }
+}
+
+a.c0197:not(.c01100):not(.c01100):hover .c0199::before {}
+
+@media (-ms-high-contrast:active) {
+    a.c0197:not(.c01100):not(.c01100):hover .c0199::before {
+        background: LinkText !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0197:hover:enabled, a.c0197:not(.c01100):hover {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+.c0197:hover:enabled .c01101, .c0197:hover:enabled .c01102, a.c0197:not(.c01100):hover .c01101, a.c0197:not(.c01100):hover .c01102 {
+    fill: #0060A9;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0197:hover:enabled .c01101, .c0197:hover:enabled .c01102, a.c0197:not(.c01100):hover .c01101, a.c0197:not(.c01100):hover .c01102 {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0197:hover .c0199::before {
+        background: Highlight;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0197 .c0199::before {
+        background: ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c0197:focus, .js-focus-visible .c0197.focus-visible, .js-focus-visible [data-focus-visible-added].c0197 {
+        fill: Highlight !important;
+        color: Highlight !important;
+    }
+}
+
+body:not(.js-focus-visible) .c0197:focus .c0199::before, .js-focus-visible .c0197.focus-visible .c0199::before, .js-focus-visible [data-focus-visible-added].c0197 .c0199::before {
+    background: #262626;
+    height: 2px;
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c0197:focus .c0199::before, .js-focus-visible .c0197.focus-visible .c0199::before, .js-focus-visible [data-focus-visible-added].c0197 .c0199::before {
+        background: Highlight;
+    }
+}
+
+.c0198 {
+    background: #F7F7F7;
+}
+
+.c0198:hover:enabled, a.c0198:not(.c01100):hover {
+    background-color: #EAEAEA;
+}
+
+.c0198:active:enabled, a.c0198:not(.c01100):active {
+    background-color: #EFEFEF;
+}
+
+.c0198:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0198:focus, .js-focus-visible .c0198.focus-visible, .js-focus-visible [data-focus-visible-added].c0198 {
+    border-color: #838383;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0198 {
+        fill: ButtonText;
+        color: ButtonText;
+        border: none;
+        background: ButtonFace;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c0198:focus, .js-focus-visible .c0198.focus-visible, .js-focus-visible [data-focus-visible-added].c0198 {
+        border-color: ButtonText;
+        box-shadow: 0 0 0 1px inset ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0198:hover:enabled, a.c0198:not(.c01100):hover {
+        fill: HighlightText;
+        color: HighlightText;
+        background: Highlight;
+    }
+}
+
+.c0199 {
+    position: relative;
+}
+
+.c0199::before {
+    width: 100%;
+    bottom: -3px;
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1px;
+    left: 0;
+}
+
+.c0199 svg {
+    width: 16px;
+    height: 16px;
+}
+
+.c01100 {
+    cursor: not-allowed !important;
+    opacity: 0.3;
+}
+
+@media (-ms-high-contrast:active) {
+    .c01100 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+        background: ButtonFace !important;
+        border-color: GrayText !important;
+    }
+}
+
+.c01100 .c01101, .c01100 .c01102 {}
+
+@media (-ms-high-contrast:active) {
+    .c01100 .c01101, .c01100 .c01102 {
+        fill: GrayText !important;
+        color: GrayText !important;
+        opacity: 1;
+    }
+}
+
+.c01101 {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+}
+
+.c01102 {
+    width: 16px;
+    height: 16px;
+    margin-left: 12px;
+}
+
+</style><style data-jss="" data-meta="MSFTHeading - jssStyleSheet">.c01179 {
+    margin-top: 10px;
+}
+
+</style><style data-jss="" data-meta="Pane">.c0186 {
+    flex: 0 1 auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.c0187 {
+    top: 0;
+    width: 8px;
+    height: 100%;
+    padding: 0;
+    opacity: 0;
+    z-index: 1;
+    outline: none;
+    position: absolute;
+    transform: scale(.5, 1);
+    transition: transform .04s ease-in-out;
+}
+
+.c0187:hover {
+    cursor: ew-resize;
+}
+
+.c0187:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0187:focus, .js-focus-visible .c0187.focus-visible, .js-focus-visible [data-focus-visible-added].c0187 {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.c0187:active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.c0188 {}
+
+.c0188 .c0187 {
+    left: -4px;
+}
+
+.c0189 {}
+
+.c0189 .c0187 {
+    right: -4px;
+}
+
+.c0190 {
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+}
+
+.c0191 {
+    display: none;
+}
+
+</style><style data-jss="" data-meta="MSFTButton - jssStyleSheet">.c01103 {
+    min-width: 32px;
+}
+
+</style><style data-jss="" data-meta="Row">.c0178 {
+    display: flex;
+    position: relative;
+    flex-basis: auto;
+    flex-direction: row;
+}
+
+.c0179 {
+    flex: 1;
+    overflow: hidden;
+}
+
+.c0180 {
+    left: 0;
+    width: 100%;
+    height: 8px;
+    padding: 0;
+    opacity: 0;
+    z-index: 1;
+    outline: none;
+    position: absolute;
+    transform: scale(1, .5);
+    transition: transform .04s ease-in-out;
+}
+
+.c0180:hover {
+    cursor: ns-resize;
+}
+
+.c0180:focus {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.c0180:active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.c0181 {}
+
+.c0181 .c0180 {
+    top: -4px;
+}
+
+.c0182 {}
+
+.c0182 .c0180 {
+    bottom: -4px;
+}
+
+.c0183 {
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+}
+
+.c0184 {
+    display: none;
+}
+
+</style><style data-jss="" data-meta="Pane - jssStyleSheet">.c0192 {
+    border: none;
+    background: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.c0192::after {
+    left: 4px;
+    width: 1px;
+    bottom: 0;
+    height: 100%;
+    content: "";
+    position: absolute;
+    background: #909090;
+}
+
+.c0192:hover {
+    cursor: col-resize;
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.c0192:active {}
+
+.c0192:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0192:focus, .js-focus-visible .c0192.focus-visible, .js-focus-visible [data-focus-visible-added].c0192 {}
+
+@media (-ms-high-contrast:active) {
+    .c0192 {
+        opacity: 1;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c0192:focus, .js-focus-visible .c0192.focus-visible, .js-focus-visible [data-focus-visible-added].c0192 {
+        width: 1px;
+        background: ButtonText;
+    }
+}
+
+.c0192:active::after {
+    background: #CECECE;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0192:active::after {
+        width: 2px;
+        background: ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0192::after {
+        background: ButtonText;
+    }
+}
+
+</style><style data-jss="" data-meta="Container">.c0177 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+</style><style data-jss="" data-meta="Row - jssStyleSheet">.c0185 {
+    border: none;
+    background: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.c0185::after {
+    top: 4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    position: absolute;
+    background: #909090;
+}
+
+.c0185:hover {
+    cursor: row-resize;
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.c0185:active {}
+
+.c0185:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0185:focus, .js-focus-visible .c0185.focus-visible, .js-focus-visible [data-focus-visible-added].c0185 {}
+
+@media (-ms-high-contrast:active) {
+    .c0185 {
+        opacity: 1;
+        -ms-high-contrast-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    body:not(.js-focus-visible) .c0185:focus, .js-focus-visible .c0185.focus-visible, .js-focus-visible [data-focus-visible-added].c0185 {
+        height: 1px;
+        background: ButtonText;
+    }
+}
+
+.c0185:active::after {
+    background: #CECECE;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0185:active::after {
+        height: 2px;
+        background: ButtonText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0185::after {
+        background: ButtonText;
+    }
+}
+
+</style><style data-jss="" data-meta="ue">@-webkit-keyframes SiteNavigationClose {
+    0% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(0.93);
+    }
+}
+
+@-webkit-keyframes SiteNavigationOpen {
+    0% {
+        opacity: 0;
+        transform: scaleX(0.93);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@-webkit-keyframes TitleClose {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes TitleOpen {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.c0148 {}
+
+.c0149 {
+    overflow-y: auto;
+    padding-top: 30px;
+    padding-left: 44px;
+    padding-right: 84px;
+    color: #262626;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0149 {
+        padding-left: 46px;
+        padding-right: 46px;
+    }
+}
+
+.c0150 {}
+
+.c0151 {
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    display: none;
+    z-index: 100;
+    position: absolute;
+    padding-top: 20px;
+    flex-direction: column;
+    animation-fill-mode: both;
+    left: 0;
+    right: auto;
+    padding-left: 40px;
+    padding-right: 20px;
+    transform-origin: top left;
+    box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.13908558841119492), 0px 0px 2.9px rgba(0, 0, 0, 0.1176878055787034);
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0151 {
+        height: 100%;
+    }
+}
+
+.c0152 {
+    animation-name: SiteNavigationClose;
+    animation-duration: .25s;
+    transition-timing-function: cubic-bezier(.26, 1, .48, 1);
+}
+
+.c0152 .c0164 {
+    animation-name: TitleClose;
+    animation-duration: .25s;
+}
+
+.c0153 {
+    animation-name: SiteNavigationOpen;
+    animation-duration: .25s;
+    transition-timing-function: cubic-bezier(.52, 0, .74, 0);
+}
+
+.c0153 .c0164 {
+    animation-name: TitleOpen;
+    animation-delay: .075s;
+    animation-duration: .25s;
+    animation-fill-mode: both;
+}
+
+.c0154 {
+    display: none;
+    min-width: 32px;
+    margin-right: 10px;
+    margin-left: unset;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0154 {
+        display: block;
+    }
+}
+
+.c0155 {
+    position: relative;
+}
+
+.c0156 {
+    width: 16px;
+    height: 16px;
+}
+
+.c0157 {
+    min-width: 32px;
+}
+
+.c0158 {
+    top: 44px;
+    right: 0;
+    z-index: 3;
+    padding: 4px 4px 4px 3px;
+    position: absolute;
+    min-width: 240px;
+    color: #262626;
+    background: #FFFFFF;
+    box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.13908558841119492), 0px 0px 2.9px rgba(0, 0, 0, 0.1176878055787034);
+}
+
+.c0159 {
+    flex: 1;
+    padding: 0;
+    min-width: 280px;
+    margin-top: 10px;
+    overflow-y: auto;
+    margin-bottom: 40px;
+    list-style-type: none;
+    color: #262626;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0159 {
+        display: none;
+    }
+}
+
+.c0160 {
+    flex: 1;
+    width: 100%;
+    display: none;
+    padding: 0;
+    min-width: 150px;
+    margin-top: 10px;
+    flex-direction: column;
+    list-style-type: none;
+    margin-right: 20px;
+    margin-left: unset;
+    color: #262626;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0160 {
+        display: flex;
+    }
+}
+
+.c0161 {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.c0162 {
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0162 {
+        display: flex;
+    }
+}
+
+.c0163 {
+    display: flex;
+}
+
+.c0164 {
+    opacity: 1;
+}
+
+.c0165 {
+    display: flex;
+    min-height: 38px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.c0166 {
+    height: 100vh;
+    display: flex;
+    padding-top: 30px;
+    flex-direction: column;
+    padding-left: 84px;
+    padding-right: 42px;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0166 {
+        height: unset;
+        max-width: 820px;
+        align-items: center;
+        padding-left: 46px;
+        padding-right: 46px;
+        flex-direction: row;
+    }
+}
+
+.c0167 {}
+
+@media only screen and (max-width: 1035px) {
+    .c0167 {
+        display: block;
+        overflow-y: auto;
+    }
+}
+
+.c0168 {
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0168 {
+        min-width: 240px;
+        margin-top: unset;
+        margin-right: unset;
+        margin-left: auto;
+    }
+}
+
+.c0169 {}
+
+.c0169 .c0151, .c0169 .c0166 {
+    height: auto;
+}
+
+.c0169 .c0150 {
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+</style><style data-jss="" data-meta="Ve">::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #8D8D8D;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb {
+        background: ButtonText;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A7A7A7;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb:hover {
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #9A9A9A;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb:active {
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-corner {
+    background: none;
+}
+
+.c0123 {
+    border-top: 1px solid #B6B6B6;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.c0124 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.c0125 {
+    flex: 1;
+    margin: 0px;
+    font-size: 14px;
+    margin-inline-end: 8px;
+    color: #262626;
+}
+
+.c0125>a {
+    border-bottom: 1px solid #0072C9;
+    text-decoration: none;
+    color: #0072C9;
+}
+
+.c0125>a:hover {
+    border-bottom: 2px solid #0060A9;
+    color: #0060A9;
+}
+
+.c0125>a:active {
+    border-bottom: 2px solid #097DD5;
+    color: #097DD5;
+}
+
+.c0125>a:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0125>a:focus, .js-focus-visible .c0125>a.focus-visible, .js-focus-visible [data-focus-visible-added].c0125>a {
+    border-bottom: 2px solid #838383;
+}
+
+.c0126 {
+    margin-top: 4px;
+}
+
+.c0127 {
+    height: unset;
+    border: none;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    min-width: unset;
+    background: none;
+    transition: none;
+    border-radius: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0072C9;
+    fill: #0072C9;
+}
+
+.c0127:disabled {
+    cursor: default !important;
+    opacity: unset;
+    color: #717171;
+    fill: #717171;
+}
+
+.c0127:hover:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #0060A9;
+    color: #0060A9;
+    fill: #0060A9;
+}
+
+.c0127:focus:enabled {
+    outline: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px #838383;
+}
+
+.c0127:active:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #097DD5;
+    color: #097DD5;
+    fill: #097DD5;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0127 {
+        fill: LinkText;
+        color: LinkText;
+        forced-color-adjust: none;
+    }
+    .c0127:hover:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c0127:focus:enabled {
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c0127:active:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+}
+
+.c0128 {
+    margin: 0;
+    z-index: 4;
+    overflow: hidden;
+    max-width: 820px;
+    min-width: 215px;
+    padding-top: 34px;
+    margin-left: 50px;
+    white-space: nowrap;
+    margin-right: 50px;
+    text-overflow: ellipsis;
+    padding-bottom: 16px;
+    color: #262626;
+}
+
+.c0129 {
+    margin: 0;
+    z-index: 4;
+    max-width: 820px;
+    min-width: 215px;
+    user-select: none;
+    padding-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 4px;
+    color: #262626;
+}
+
+.c0130 {
+    padding: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 18px;
+    list-style-type: none;
+}
+
+.c0131 {
+    width: 820px;
+    min-width: 215px;
+    max-width: 820px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.c0132 {}
+
+.c0133 {}
+
+.c0134 {}
+
+.c0135 {
+    color: #101010;
+    background-color: #FFEB3B;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0135 {
+        color: HighlightText;
+        background-color: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+.c0136 {
+    width: 100%;
+    height: 100%;
+}
+
+.c0136:focus {
+    outline: none;
+}
+
+.c0137 {
+    width: 100%;
+    height: 100%;
+}
+
+.c0138 {
+    width: 100%;
+    height: 100%;
+}
+
+.c0139 {
+    overflow-y: auto;
+}
+
+.c0140 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.c0140>* {
+    margin-bottom: 14px;
+}
+
+.c0141 {
+    height: 100%;
+    position: relative;
+    flex-grow: 1;
+    margin-top: 10px;
+}
+
+.c0142 {
+    overflow: auto;
+    min-height: 80px;
+}
+
+.c0143 {
+    height: 32px;
+    padding-right: 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c0143 #search_input {
+    border: none;
+    height: 28px;
+    padding: 3px 0 5px 0;
+    min-width: 40px;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0143 {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+.c0144 {
+    width: 24px;
+    height: 24px;
+    margin: 4px;
+    padding: 0;
+    min-width: 24px;
+    max-width: unset;
+    transition: none;
+    background: transparent;
+    color: #262626;
+}
+
+.c0144:hover:not([disabled]) {}
+
+.c0144>* {
+    display: flex !important;
+}
+
+.c0144:disabled {}
+
+@media (-ms-high-contrast:active) {
+    .c0144 {}
+    .c0144:hover {
+        color: HighlightText;
+        background-color: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+.c0144 .c0145 {
+    width: 12px;
+    height: 12px;
+}
+
+.c0144:hover .c0145 {}
+
+@media (-ms-high-contrast:active) {
+    .c0144:hover .c0145 {
+        fill: HighlightText;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0144:disabled {
+        fill: GrayText;
+        forced-color-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0144:hover:not([disabled]) {
+        fill: HighlightText !important;
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+.c0145 {
+    width: 12px;
+    height: 12px;
+    fill: #262626;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0145 {
+        fill: ButtonText;
+        forced-color-adjust: none;
+    }
+    .c0145:hover {
+        fill: HighlightText;
+    }
+}
+
+.c0146 {
+    margin: auto;
+    margin-left: 12px;
+    margin-right: 12px;
+    fill: #262626;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0146 {
+        fill: WindowText;
+        forced-color-adjust: none;
+    }
+}
+
+.c0147 {
+    transform: scale(-1, 1);
+}
+
+</style><style data-jss="" data-meta="ue - jssStyleSheet">.c0170 {
+    width: unset;
+    z-index: 3;
+    overflow-y: hidden !important;
+    overflow-x: auto;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0170 {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.c0171 {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow-y: hidden !important;
+    overflow-x: auto;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0171 {
+        min-width: unset !important;
+        border-top: 1px solid #B6B6B6;
+    }
+}
+
+.c0172 {
+    padding: 30px 25px 0px 50px;
+    overflow-y: auto;
+    border-inline-end: 1px solid #B6B6B6;
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0172 {
+        border: none;
+        flex-wrap: wrap;
+        max-width: 820px;
+        min-width: 215px;
+        min-height: 50px;
+        padding-top: 20px;
+        align-items: flex-start;
+        padding-bottom: 5px;
+        justify-content: space-between;
+        padding-inline-end: 10px;
+        padding-inline-start: 50px;
+    }
+}
+
+.c0173 {
+    min-height: unset;
+    margin-bottom: 14px;
+    margin-inline-end: 8px;
+}
+
+.c0174 {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    display: none;
+    min-width: 36px;
+    max-width: unset;
+    transition: none;
+    background: transparent;
+    margin-inline-end: 4px;
+    margin-inline-start: -40px;
+}
+
+.c0174:hover:not([disabled]) {}
+
+.c0174>* {
+    display: flex !important;
+}
+
+.c0174:disabled {}
+
+@media (-ms-high-contrast:active) {
+    .c0174 {
+        fill: ButtonText;
+        forced-color-adjust: none;
+    }
+}
+
+@media only screen and (max-width: 1035px) {
+    .c0174 {
+        display: flex;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0174:disabled {
+        fill: GrayText;
+        forced-color-adjust: none;
+    }
+}
+
+@media (-ms-high-contrast:active) {
+    .c0174:hover:not([disabled]) {
+        fill: HighlightText !important;
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+.c0175 {
+    width: 220px;
+    height: 100%;
+    padding: 20px 50px 0px 50px;
+    box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.20), 0px 0.3px 0.9px rgba(0, 0, 0, 0.11);
+    background-color: #F7F7F7;
+}
+
+.c0176 {
+    font-size: 24px;
+    margin-top: 0;
+    line-height: 32px;
+    color: #262626;
+}
+
+</style><style data-jss="" data-meta="_">::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #8D8D8D;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb {
+        background: ButtonText;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A7A7A7;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb:hover {
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #9A9A9A;
+}
+
+@media (-ms-high-contrast:active) {
+    ::-webkit-scrollbar-thumb:active {
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+::-webkit-scrollbar-corner {
+    background: none;
+}
+
+.c015 {
+    border-top: 1px solid #B6B6B6;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.c016 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.c017 {
+    flex: 1;
+    margin: 0px;
+    font-size: 14px;
+    margin-inline-end: 8px;
+    color: #262626;
+}
+
+.c017>a {
+    border-bottom: 1px solid #0072C9;
+    text-decoration: none;
+    color: #0072C9;
+}
+
+.c017>a:hover {
+    border-bottom: 2px solid #0060A9;
+    color: #0060A9;
+}
+
+.c017>a:active {
+    border-bottom: 2px solid #097DD5;
+    color: #097DD5;
+}
+
+.c017>a:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c017>a:focus, .js-focus-visible .c017>a.focus-visible, .js-focus-visible [data-focus-visible-added].c017>a {
+    border-bottom: 2px solid #838383;
+}
+
+.c018 {
+    margin-top: 4px;
+}
+
+.c019 {
+    height: unset;
+    border: none;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    min-width: unset;
+    background: none;
+    transition: none;
+    border-radius: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0072C9;
+    fill: #0072C9;
+}
+
+.c019:disabled {
+    cursor: default !important;
+    opacity: unset;
+    color: #717171;
+    fill: #717171;
+}
+
+.c019:hover:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #0060A9;
+    color: #0060A9;
+    fill: #0060A9;
+}
+
+.c019:focus:enabled {
+    outline: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px #838383;
+}
+
+.c019:active:enabled {
+    background: none;
+    box-shadow: 0px 2px 0px 0px #097DD5;
+    color: #097DD5;
+    fill: #097DD5;
+}
+
+@media (-ms-high-contrast:active) {
+    .c019 {
+        fill: LinkText;
+        color: LinkText;
+        forced-color-adjust: none;
+    }
+    .c019:hover:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c019:focus:enabled {
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+    .c019:active:enabled {
+        fill: LinkText;
+        color: LinkText;
+        background: none;
+        box-shadow: 0px 2px 0px 0px LinkText;
+    }
+}
+
+.c0110 {
+    margin: 0;
+    z-index: 4;
+    overflow: hidden;
+    max-width: 820px;
+    min-width: 215px;
+    padding-top: 34px;
+    margin-left: 50px;
+    white-space: nowrap;
+    margin-right: 50px;
+    text-overflow: ellipsis;
+    padding-bottom: 16px;
+    color: #262626;
+}
+
+.c0111 {
+    margin: 0;
+    z-index: 4;
+    max-width: 820px;
+    min-width: 215px;
+    user-select: none;
+    padding-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 4px;
+    color: #262626;
+}
+
+.c0112 {
+    padding: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 18px;
+    list-style-type: none;
+}
+
+.c0113 {
+    width: 820px;
+    min-width: 215px;
+    max-width: 820px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.c0114 {}
+
+.c0115 {}
+
+.c0116 {}
+
+.c0117 {
+    color: #101010;
+    background-color: #FFEB3B;
+}
+
+@media (-ms-high-contrast:active) {
+    .c0117 {
+        color: HighlightText;
+        background-color: Highlight;
+        forced-color-adjust: none;
+    }
+}
+
+.c0118 {
+    width: 100%;
+    height: 100%;
+}
+
+.c0118:focus {
+    outline: none;
+}
+
+.c0119 {
+    width: 100%;
+    height: 100%;
+}
+
+.c0120 {
+    border-bottom: 1px solid #0072C9;
+    text-decoration: none;
+    color: #0072C9;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c0120:hover {
+    border-bottom: 2px solid #0060A9;
+    color: #0060A9;
+}
+
+.c0120:active {
+    border-bottom: 2px solid #097DD5;
+    color: #097DD5;
+}
+
+.c0120:focus {
+    outline: none;
+}
+
+body:not(.js-focus-visible) .c0120:focus, .js-focus-visible .c0120.focus-visible, .js-focus-visible [data-focus-visible-added].c0120 {
+    border-bottom: 2px solid #838383;
+}
+
+.c0121 {
+    display: flex;
+    align-items: flex-start;
+}
+
+.c0122 {
+    min-width: 16px;
+    min-height: 16px;
+    margin-top: 4px;
+    margin-inline-end: 12px;
+    margin-inline-start: 11px;
+    fill: #0072C9;
+}
+
+</style><style data-jss="" data-meta="Rn">.c011 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.c012 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 10;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.c013 {
+    color: #6e6e6e;
+    font-size: 123.1%;
+    font-weight: 500;
+}
+
+.c014 {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    margin-bottom: 16px;
+    fill: #262626;
+}
+
+@media (-ms-high-contrast:active) {
+    .c014 {
+        fill: WindowText;
+    }
+}
